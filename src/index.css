@@ -136,7 +136,7 @@ All colors MUST be HSL.
   /* Hero button variant */
   .btn-hero {
     @apply bg-gradient-to-r from-primary to-accent text-white font-semibold px-8 py-4 rounded-xl;
-    @apply shadow-primary hover:shadow-hover transform hover:-translate-y-1;
+    @apply shadow-lg hover:shadow-xl transform hover:-translate-y-1;
     @apply transition-all duration-300 ease-out;
   }
 
@@ -150,7 +150,7 @@ All colors MUST be HSL.
   /* Card hover effects */
   .card-hover {
     @apply bg-gradient-to-br from-card to-muted border border-border rounded-2xl p-6;
-    @apply shadow-card hover:shadow-hover transform hover:-translate-y-2;
+    @apply shadow-md hover:shadow-xl transform hover:-translate-y-2;
     @apply transition-all duration-300 ease-out;
   }
 
