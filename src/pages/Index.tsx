@@ -4,7 +4,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/hero-bg.jpg';
 import { AnimatedText } from '@/components/AnimatedText';
 import { ParticleBackground } from '@/components/ParticleBackground';
-import { ScrollAnimation } from '@/components/ScrollAnimations';
 
 const Index = () => {
   const services = [
@@ -123,37 +122,29 @@ const Index = () => {
       {/* Trust Section */}
       <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollAnimation animation="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose Brianix Tech Solutions?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-12">
-              3 dedicated experts, years of combined experience, passion for quality, transparent pricing.
-            </p>
-          </ScrollAnimation>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Why Choose Brianix Tech Solutions?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-12">
+            3 dedicated experts, years of combined experience, passion for quality, transparent pricing.
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ScrollAnimation animation="fade-up" delay={100}>
-              <div className="card-hover text-center group">
-                <Zap className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-semibold mb-2">Fast Delivery</h3>
-                <p className="text-muted-foreground">Quick turnaround without compromising quality</p>
-              </div>
-            </ScrollAnimation>
-            <ScrollAnimation animation="fade-up" delay={200}>
-              <div className="card-hover text-center group">
-                <Users className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-semibold mb-2">Dedicated Team</h3>
-                <p className="text-muted-foreground">Personal attention to every project detail</p>
-              </div>
-            </ScrollAnimation>
-            <ScrollAnimation animation="fade-up" delay={300}>
-              <div className="card-hover text-center group">
-                <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
-                <p className="text-muted-foreground">Track record of successful projects</p>
-              </div>
-            </ScrollAnimation>
+            <div className="card-hover text-center group">
+              <Zap className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-xl font-semibold mb-2">Fast Delivery</h3>
+              <p className="text-muted-foreground">Quick turnaround without compromising quality</p>
+            </div>
+            <div className="card-hover text-center group">
+              <Users className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-xl font-semibold mb-2">Dedicated Team</h3>
+              <p className="text-muted-foreground">Personal attention to every project detail</p>
+            </div>
+            <div className="card-hover text-center group">
+              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
+              <p className="text-muted-foreground">Track record of successful projects</p>
+            </div>
           </div>
         </div>
       </section>
@@ -161,39 +152,35 @@ const Index = () => {
       {/* Services Section */}
       <section className="py-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollAnimation animation="fade-up">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Our Core Services
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Everything you need to establish and grow your digital presence
-              </p>
-            </div>
-          </ScrollAnimation>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Our Core Services
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to establish and grow your digital presence
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <ScrollAnimation key={index} animation="scale-up" delay={index * 100}>
-                <Card className="card-hover border-0 group overflow-hidden">
-                  <CardContent className="p-8 relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative z-10">
-                      <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
-                      <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm">
-                            <CheckCircle className="w-4 h-4 text-accent mr-2" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              </ScrollAnimation>
+              <Card key={index} className="card-hover border-0 group overflow-hidden">
+                <CardContent className="p-8 relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                    <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground mb-4">{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-accent mr-2" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -202,36 +189,32 @@ const Index = () => {
       {/* Testimonials Section */}
       <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollAnimation animation="fade-up">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Hear From Our Happy Clients
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Real results from real businesses
-              </p>
-            </div>
-          </ScrollAnimation>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Hear From Our Happy Clients
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Real results from real businesses
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <ScrollAnimation key={index} animation="fade-up" delay={index * 150}>
-                <Card className="card-hover border-0 group">
-                  <CardContent className="p-8 relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div className="flex mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current transform group-hover:scale-110 transition-transform duration-200" style={{ transitionDelay: `${i * 50}ms` }} />
-                      ))}
-                    </div>
-                    <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                    <div>
-                      <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.company}</div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </ScrollAnimation>
+              <Card key={index} className="card-hover border-0 group">
+                <CardContent className="p-8 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current transform group-hover:scale-110 transition-transform duration-200" style={{ transitionDelay: `${i * 50}ms` }} />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
+                  <div>
+                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="text-sm text-muted-foreground">{testimonial.company}</div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
