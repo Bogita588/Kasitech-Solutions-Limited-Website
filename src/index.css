@@ -79,38 +79,38 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 13% 9%;
-    --foreground: 210 40% 98%;
+    --background: 220 15% 8%;
+    --foreground: 210 20% 96%;
 
-    --card: 220 13% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 13% 12%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 220 13% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 210 20% 96%;
 
-    /* Keep primary blue in dark mode */
-    --primary: 214 84% 56%;
+    /* Brighter primary blue for dark mode visibility */
+    --primary: 214 84% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 214 84% 50%;
-    --primary-light: 214 84% 12%;
+    --primary-hover: 214 84% 65%;
+    --primary-light: 214 84% 15%;
 
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 32% 20%;
+    --secondary-foreground: 210 20% 96%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217 32% 20%;
+    --muted-foreground: 215 16% 70%;
 
-    /* Keep accent green in dark mode */
-    --accent: 142 76% 36%;
+    /* Brighter accent green for dark mode */
+    --accent: 142 76% 42%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 142 76% 30%;
+    --accent-hover: 142 76% 36%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 214 84% 56%;
+    --border: 217 32% 22%;
+    --input: 217 32% 22%;
+    --ring: 214 84% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -160,15 +160,22 @@ All colors MUST be HSL.
     @apply bg-background text-primary border-2 border-primary font-semibold px-8 py-4 rounded-xl;
     @apply hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-105;
     @apply transition-all duration-300 ease-out relative overflow-hidden;
-    @apply dark:bg-background dark:text-primary dark:hover:bg-primary dark:hover:text-white;
+    @apply dark:bg-background dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white;
   }
 
   /* Card hover effects */
   .card-hover {
-    @apply bg-gradient-to-br from-card to-muted border border-border rounded-2xl p-6;
-    @apply shadow-md hover:shadow-xl transform hover:-translate-y-2;
+    @apply bg-gradient-to-br from-card to-muted border border-border rounded-xl p-5;
+    @apply shadow-md hover:shadow-xl transform hover:-translate-y-1;
     @apply transition-all duration-300 ease-out relative overflow-hidden;
-    @apply dark:from-card dark:to-secondary;
+    @apply dark:from-card dark:to-secondary dark:border-border;
+  }
+  
+  /* Download PDF button */
+  .btn-download {
+    @apply bg-gradient-to-r from-accent to-primary text-white font-semibold px-6 py-3 rounded-lg;
+    @apply shadow-md hover:shadow-lg transform hover:scale-105;
+    @apply transition-all duration-300 ease-out flex items-center gap-2;
   }
 
   /* Scroll animations */

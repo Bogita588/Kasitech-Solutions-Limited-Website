@@ -1,191 +1,275 @@
-import { Globe, Smartphone, Search, Code, BarChart3, Palette, ArrowRight, CheckCircle } from 'lucide-react';
+import { Download, MapPin, Phone, Mail, MessageCircle, CheckCircle, Clock, TrendingUp, Shield, Award, FileText, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const Services = () => {
-  const services = [
+  const packages = [
     {
-      icon: <Globe className="w-10 h-10" />,
-      title: "Web Development",
-      description: "Custom websites that convert visitors into customers",
+      id: 1,
+      name: "Starter Website",
+      subtitle: "For Small Businesses / Individuals",
+      price: "KES 45,000",
+      hirePurchase: "KES 25,000 upfront + 10,000 x 2 monthly",
+      timeline: "7–10 working days",
+      icon: <Zap className="w-8 h-8" />,
       features: [
-        "Responsive Design for All Devices",
-        "Fast Loading & Performance Optimized", 
-        "SEO-Friendly Architecture",
-        "Content Management Systems",
-        "E-commerce Integration",
-        "Security & SSL Implementation"
+        "1–5 pages (Home, About, Services, Contact, etc.)",
+        "Responsive design (mobile-friendly)",
+        "Free SSL Certificate (security)",
+        "Domain name (.co.ke or .com) – 1 year included",
+        "Hosting (Basic plan – 1 year included)",
+        "1 Business Email Setup",
+        "WhatsApp integration for quick contact"
       ],
-      pricing: "Starting from $2,999",
-      timeline: "2-6 weeks"
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
-      icon: <Smartphone className="w-10 h-10" />,
-      title: "App Development",
-      description: "Mobile and web apps that scale with your business",
+      id: 2,
+      name: "Business Pro Website",
+      subtitle: "For Growing SMEs",
+      price: "KES 80,000",
+      hirePurchase: "KES 40,000 upfront + 20,000 x 2 monthly",
+      timeline: "2–3 weeks",
+      icon: <TrendingUp className="w-8 h-8" />,
+      popular: true,
       features: [
-        "Cross-Platform Development",
-        "Native iOS & Android Apps",
-        "Progressive Web Apps (PWA)",
-        "API Integration & Backend",
-        "User Authentication & Security",
-        "App Store Deployment"
+        "5–12 pages (includes blog, services, portfolio, contact forms)",
+        "SEO optimization (basic on-page SEO setup)",
+        "Domain + Hosting (1 year included)",
+        "3 Business Emails Setup",
+        "Integrated WhatsApp Chat, Call, & Email buttons",
+        "Google Analytics & Search Console setup",
+        "Website audit report after delivery"
       ],
-      pricing: "Starting from $4,999",
-      timeline: "4-12 weeks"
+      gradient: "from-primary to-accent"
     },
     {
-      icon: <Search className="w-10 h-10" />,
-      title: "SEO Services",
-      description: "Get found by your ideal customers online",
+      id: 3,
+      name: "Ecommerce Website",
+      subtitle: "For Online Stores",
+      price: "KES 150,000",
+      hirePurchase: "KES 75,000 upfront + 25,000 x 3 monthly",
+      timeline: "3–5 weeks",
+      icon: <Shield className="w-8 h-8" />,
       features: [
-        "Comprehensive SEO Audits",
-        "Keyword Research & Strategy",
-        "On-Page & Technical SEO",
-        "Content Optimization",
-        "Local SEO & Google My Business",
-        "Monthly Performance Reports"
+        "Up to 100 products (expandable)",
+        "Cart, checkout, payment gateway integration (M-Pesa, Cards, PayPal)",
+        "Product filters, categories, search function",
+        "Domain + Hosting (1 year included, with higher capacity)",
+        "5 Business Emails Setup",
+        "Inventory management system",
+        "SEO setup (product SEO, sitemap, metadata)",
+        "Free training on managing your store"
       ],
-      pricing: "Starting from $999/month",
-      timeline: "Ongoing"
+      gradient: "from-emerald-500 to-teal-500"
     },
     {
-      icon: <Code className="w-10 h-10" />,
-      title: "Custom Coding & E-commerce",
-      description: "Bespoke solutions tailored to your unique needs",
+      id: 4,
+      name: "Custom Web / App Development",
+      subtitle: "For Enterprises & Startups",
+      price: "Starting from KES 250,000",
+      hirePurchase: "Available (negotiated based on project scope)",
+      timeline: "Timeline depends on scope",
+      icon: <Award className="w-8 h-8" />,
       features: [
-        "Custom Web Applications",
-        "E-commerce Stores & Platforms",
-        "Payment Gateway Integration",
-        "Third-Party API Integrations",
-        "Database Design & Management",
-        "Legacy System Modernization"
+        "Web or mobile app (Android/iOS)",
+        "Custom coding (portals, booking systems, CRMs, etc.)",
+        "Advanced integrations (APIs, payment systems)",
+        "Domain + Hosting (enterprise-level, cost varies)",
+        "Full documentation + training",
+        "Dedicated support & maintenance options"
       ],
-      pricing: "Custom Quote",
-      timeline: "Varies"
+      gradient: "from-purple-500 to-pink-500"
+    }
+  ];
+
+  const additionalServices = [
+    {
+      name: "Website Audit",
+      price: "KES 15,000",
+      description: "Performance, SEO, security, UX audit with recommendations"
     },
     {
-      icon: <BarChart3 className="w-10 h-10" />,
-      title: "Website Audits",
-      description: "Comprehensive analysis to optimize your digital presence",
-      features: [
-        "Performance & Speed Analysis",
-        "SEO & Technical Audit",
-        "Security Vulnerability Assessment",
-        "UX/UI Review & Recommendations",
-        "Conversion Rate Analysis",
-        "Detailed Action Plan"
-      ],
-      pricing: "Starting from $499",
-      timeline: "1-2 weeks"
+      name: "SEO Monthly Package",
+      price: "From KES 30,000/month",
+      description: "On-page SEO, content optimization, backlinks strategy, monthly reports"
+    }
+  ];
+
+  const addOns = [
+    { item: "Domain renewal (.co.ke)", price: "KES 1,000/year" },
+    { item: "Domain renewal (.com)", price: "KES 1,500/year" },
+    { item: "Hosting renewal (basic)", price: "From KES 6,000/year" },
+    { item: "Extra business email accounts", price: "KES 500/email/month" },
+    { item: "Maintenance package", price: "From KES 10,000/month" }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: <FileText className="w-6 h-6" />,
+      title: "Progress Reports",
+      description: "Regular updates during development"
     },
     {
-      icon: <Palette className="w-10 h-10" />,
-      title: "Landing Pages",
-      description: "High-converting pages designed for campaigns",
-      features: [
-        "Conversion-Focused Design",
-        "A/B Testing Setup",
-        "Lead Capture Forms",
-        "Analytics Integration",
-        "Mobile Optimization",
-        "Fast Deployment"
-      ],
-      pricing: "Starting from $799",
-      timeline: "1-2 weeks"
+      icon: <Clock className="w-6 h-6" />,
+      title: "On-Time Delivery",
+      description: "We guarantee timely project completion"
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Client Feedback Forms",
+      description: "Post-project feedback for continuous improvement"
+    },
+    {
+      icon: <FileText className="w-6 h-6" />,
+      title: "Full Documentation",
+      description: "Complete user guide & technical docs"
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6" />,
+      title: "Demos Available",
+      description: "Request demos before final delivery"
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Trend-Adaptive",
+      description: "Designs that evolve with your business"
     }
   ];
 
   const faqs = [
     {
-      question: "How much do your services cost?",
-      answer: "Our pricing varies based on project scope and requirements. We offer transparent, fixed-price quotes for most projects. Web development starts from $2,999, apps from $4,999, and SEO from $999/month. Contact us for a detailed quote."
+      question: "What payment methods do you accept?",
+      answer: "We accept full payment upfront (with discounts available) or flexible hire-purchase installment plans tailored to SME needs. Payment methods include M-Pesa, Bank Transfer, and Card payments."
     },
     {
-      question: "How long does a typical project take?",
-      answer: "Timeline depends on complexity. Simple websites take 2-3 weeks, complex web applications 4-8 weeks, and mobile apps 6-12 weeks. We provide detailed timelines during our initial consultation."
+      question: "Can I see demos during development?",
+      answer: "Absolutely! We provide demos at key milestones during development so you can review progress and provide feedback before final delivery."
     },
     {
-      question: "Do you offer ongoing support and maintenance?",
-      answer: "Yes! We provide 30 days of free support after launch, followed by optional maintenance plans starting from $199/month. This includes updates, security monitoring, backups, and technical support."
+      question: "What's included in the maintenance package?",
+      answer: "Our maintenance packages (from KES 10,000/month) include regular updates, security backups, technical support, and minor content changes to keep your website running smoothly."
     },
     {
-      question: "Can you work with our existing systems?",
-      answer: "Absolutely. We specialize in integrating with existing systems, APIs, and platforms. Whether it's CRM integration, payment systems, or legacy software, we can make it work seamlessly."
+      question: "Do you provide training after delivery?",
+      answer: "Yes! All packages include post-project documentation and user guides. For ecommerce and custom projects, we provide hands-on training to help you manage your website or app confidently."
     },
     {
-      question: "What's included in your SEO services?",
-      answer: "Our SEO packages include keyword research, on-page optimization, technical SEO fixes, content recommendations, local SEO setup, and monthly performance reports. We focus on sustainable, white-hat techniques."
-    },
-    {
-      question: "Do you provide hosting and domain services?",
-      answer: "We can recommend and help set up hosting solutions that best fit your needs. We work with all major hosting providers and can manage the technical setup process for you."
+      question: "What happens after my hosting/domain expires?",
+      answer: "We'll notify you in advance of any renewals. You can renew through us at competitive rates, or we can help you manage renewals with other providers if you prefer."
     }
   ];
 
-  const process = [
-    { step: "1", title: "Discovery", description: "We understand your goals, target audience, and requirements" },
-    { step: "2", title: "Strategy", description: "We create a detailed plan and timeline for your project" },
-    { step: "3", title: "Design", description: "We design user-friendly interfaces that align with your brand" },
-    { step: "4", title: "Development", description: "We build your solution using best practices and modern technologies" },
-    { step: "5", title: "Testing", description: "We thoroughly test everything to ensure quality and performance" },
-    { step: "6", title: "Launch", description: "We deploy your solution and provide training and documentation" },
-    { step: "7", title: "Support", description: "We provide ongoing support and maintenance as needed" }
-  ];
+  const handleDownloadPDF = () => {
+    // In a real implementation, this would download an actual PDF
+    alert('PDF download will be available soon. Please contact us directly for a detailed quote.');
+  };
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-light to-white">
+      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our Services
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Services & Pricing
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Comprehensive digital solutions to grow your business. From websites 
-              to mobile apps, SEO to custom development – we've got you covered.
+            <p className="text-lg text-muted-foreground mb-6">
+              Affordable, flexible, and tailored solutions for Nairobi SMEs. 
+              Choose the package that fits your business needs.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <Button onClick={handleDownloadPDF} className="btn-download">
+                <Download className="w-5 h-5" />
+                Download PDF Packages
+              </Button>
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WhatsApp Chat
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
+      {/* Why Choose Us */}
+      <section className="py-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="card-hover border-0 h-full">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Why Choose Brianix Tech Solutions?
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We don't just build websites — we create growth engines for your business
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChooseUs.map((item, index) => (
+              <div key={index} className="card-hover text-center group">
+                <div className="text-primary mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Packages */}
+      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Our Packages
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Flexible pricing with hire-purchase options available
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {packages.map((pkg) => (
+              <Card key={pkg.id} className={`card-hover border-0 relative overflow-hidden ${pkg.popular ? 'ring-2 ring-accent' : ''}`}>
+                {pkg.popular && (
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-accent text-accent-foreground">Most Popular</Badge>
+                  </div>
+                )}
                 <CardHeader>
-                  <div className="text-primary mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${pkg.gradient} flex items-center justify-center text-white mb-4`}>
+                    {pkg.icon}
+                  </div>
+                  <CardTitle className="text-2xl font-bold mb-1">{pkg.name}</CardTitle>
+                  <p className="text-muted-foreground text-sm mb-4">{pkg.subtitle}</p>
+                  <div className="space-y-2">
+                    <div className="text-3xl font-bold text-primary">{pkg.price}</div>
+                    <div className="text-sm text-muted-foreground">
+                      💳 <span className="font-semibold">Hire Purchase:</span> {pkg.hirePurchase}
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Clock className="w-4 h-4 mr-2" />
+                      {pkg.timeline}
+                    </div>
+                  </div>
                 </CardHeader>
-                <CardContent className="flex-1">
+                <CardContent>
                   <div className="space-y-3 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start">
+                    {pkg.features.map((feature, index) => (
+                      <div key={index} className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-muted-foreground">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  
-                  <div className="border-t border-border pt-4 space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Starting Price:</span>
-                      <span className="font-semibold text-primary">{service.pricing}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Timeline:</span>
-                      <span className="font-semibold">{service.timeline}</span>
-                    </div>
-                  </div>
-                  
-                  <Button className="w-full mt-6" variant="outline">
+                  <Button className="w-full" size="lg">
                     Get Quote
-                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </CardContent>
               </Card>
@@ -194,49 +278,58 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 bg-gradient-to-br from-muted to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      {/* Additional Services */}
+      <section className="py-12 bg-background">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Process
+              Additional Services
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A proven methodology that ensures your project is delivered on time, 
-              within budget, and exceeds expectations.
-            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6">
-            {process.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            {additionalServices.map((service, index) => (
+              <Card key={index} className="card-hover border-0">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+                  <p className="text-2xl font-bold text-primary mb-3">{service.price}</p>
+                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
+
+          <Card className="card-hover border-0">
+            <CardHeader>
+              <CardTitle className="text-xl">Add-Ons & Renewals</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {addOns.map((addon, index) => (
+                  <div key={index} className="flex justify-between items-center p-3 bg-muted rounded-lg">
+                    <span className="text-sm font-medium">{addon.item}</span>
+                    <span className="text-sm font-semibold text-primary">{addon.price}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      {/* FAQ */}
+      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Get answers to common questions about our services and process
-            </p>
           </div>
           
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-left font-semibold">
+              <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pt-4">
@@ -248,29 +341,46 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent">
+      {/* Contact CTA */}
+      <section className="py-12 bg-gradient-to-r from-primary to-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Let's discuss your project and provide you with a detailed quote and timeline.
+          <p className="text-lg text-white/90 mb-6">
+            📩 Contact us today for a free consultation
+            <br />
+            📥 Download our PDF or request a custom quote tailored to your project
+            <br />
+            📍 Visit us in Nairobi at Westlands, Waiyaki Way
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 border-white">
-              Get Free Consultation
-              <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <Button onClick={handleDownloadPDF} size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 border-white">
+              <Download className="w-5 h-5 mr-2" />
+              Download PDF
             </Button>
-            <a
-              href="https://wa.me/1234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp text-lg px-8 py-4"
-            >
-              WhatsApp Chat
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="btn-whatsapp">
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp Chat
+              </Button>
             </a>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              Westlands, Waiyaki Way, Nairobi
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4" />
+              [Your Phone]
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4" />
+              [Your Email]
+            </div>
           </div>
         </div>
       </section>

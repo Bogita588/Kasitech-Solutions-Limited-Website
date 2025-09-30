@@ -121,7 +121,7 @@ const Index = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollAnimation animation="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -159,7 +159,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-16">
@@ -200,7 +200,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-16">
@@ -238,7 +238,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent">
+      <section className="py-12 bg-gradient-to-r from-primary to-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Elevate Your Digital Presence?
