@@ -220,6 +220,94 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Why We're Dependable */}
+      <section className="py-12 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Why We're Dependable
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Professional processes, transparent communication, and legal compliance
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="card-hover border-0">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Progress Reports</h3>
+                <p className="text-muted-foreground text-sm">
+                  Weekly updates during development so you know exactly what's happening with your project
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">On-Time Delivery</h3>
+                <p className="text-muted-foreground text-sm">
+                  We respect your timeline. Guaranteed delivery when promised, every single time
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Working Hours</h3>
+                <p className="text-muted-foreground text-sm">
+                  8 AM – 4 PM, Monday–Friday. Available via WhatsApp, email, Google Meet, or in-person at our Westlands office
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Post-Project Support</h3>
+                <p className="text-muted-foreground text-sm">
+                  Complete documentation, user guides, and feedback forms to ensure smooth handover
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Dispute Resolution</h3>
+                <p className="text-muted-foreground text-sm">
+                  3-tier professional resolution: proactive care, mediation, and arbitration under Kenya Arbitration Act
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Legal Compliance</h3>
+                <p className="text-muted-foreground text-sm">
+                  Fully compliant with KRA tax laws, Kenya Data Protection Act (2019), and ICT Authority guidelines
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-12 bg-gradient-to-r from-primary to-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
