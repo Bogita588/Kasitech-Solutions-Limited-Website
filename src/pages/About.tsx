@@ -50,7 +50,7 @@ const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -65,7 +65,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -115,7 +115,7 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -143,7 +143,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -174,7 +174,7 @@ const About = () => {
       </section>
 
       {/* Founder's Edge */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <Card className="card-hover border-0 bg-gradient-to-br from-primary/5 to-accent/5">
@@ -198,7 +198,7 @@ const About = () => {
       </section>
 
       {/* Africa Projects - Future Initiatives */}
-      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -292,7 +292,7 @@ const About = () => {
       </section>
 
       {/* Blog/Insights Section */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -362,7 +362,7 @@ const About = () => {
       </section>
 
       {/* Technologies */}
-      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

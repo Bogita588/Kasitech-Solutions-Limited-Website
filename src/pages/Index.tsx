@@ -63,56 +63,64 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-accent/70 dark:from-primary/95 dark:via-accent/85 dark:to-primary/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/20 dark:to-background/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-accent/90 to-primary/95 dark:from-primary/98 dark:via-accent/95 dark:to-primary/98"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/20 to-accent/30"></div>
         </div>
         
         <ParticleBackground />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 blur-xl rounded-full dark:from-primary/30 dark:to-accent/30"></div>
-            <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <div className="relative mb-8">
+            <div className="absolute -inset-8 bg-gradient-to-r from-accent/30 via-primary/40 to-accent/30 blur-3xl rounded-full animate-pulse"></div>
+            <h1 className="relative text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight tracking-tight">
               <AnimatedText 
                 text="We Build Stunning" 
-                className="block" 
+                className="block drop-shadow-2xl" 
                 speed={80}
               />
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-foreground to-white animate-pulse">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-foreground to-white">
                 <AnimatedText 
                   text="Websites & Apps" 
-                  className="" 
+                  className="animate-pulse" 
                   speed={60}
                 />
               </span>
               <AnimatedText 
                 text="That Grow Your Business" 
-                className="block bg-gradient-to-r from-white to-accent-foreground bg-clip-text text-transparent" 
+                className="block bg-gradient-to-r from-accent-foreground via-white to-accent-foreground bg-clip-text text-transparent drop-shadow-lg" 
                 speed={70}
               />
             </h1>
           </div>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto fade-in">
-            Custom web development, SEO, audits, & app development for SMEs & startups.
-            Get results that matter to your bottom line.
-          </p>
+          <div className="relative">
+            <div className="absolute inset-0 bg-white/10 blur-2xl rounded-full"></div>
+            <p className="relative text-xl md:text-3xl text-white font-medium mb-10 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
+              Your Digital Transformation Partner in <span className="text-accent-foreground font-bold">Nairobi</span> & Beyond
+              <br />
+              <span className="text-lg md:text-xl text-white/90 mt-2 block">
+                Custom web development, SEO, design, & app development for SMEs & startups
+              </span>
+            </p>
+          </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in">
-            <Button className="btn-hero" size="lg">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center fade-in mb-12">
+            <Button className="btn-hero text-lg px-10 py-7 shadow-2xl hover:shadow-accent/50 transition-all" size="lg">
               Get a Free Quote
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-6 h-6 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="btn-secondary">
+            <Button variant="outline" size="lg" className="btn-secondary text-lg px-10 py-7 bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20">
               View Our Work
             </Button>
           </div>
           
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-white/80">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-white">{stat.number}</div>
-                <div className="text-sm">{stat.label}</div>
+              <div key={index} className="text-center group hover:scale-110 transition-transform duration-300">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl group-hover:shadow-accent/50 transition-all">
+                  <div className="text-3xl md:text-5xl font-black text-white mb-2 group-hover:text-accent-foreground transition-colors">{stat.number}</div>
+                  <div className="text-sm md:text-base text-white/90 font-medium">{stat.label}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -120,7 +128,7 @@ const Index = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Why Choose Brianix Tech Solutions?
@@ -150,7 +158,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -187,7 +195,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -220,8 +228,136 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Developer Discipline & Remote Excellence */}
+      <section className="py-8 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Developer Discipline in a Remote Setting
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Professionalism, accountability, and structured processes—no matter where we work
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="card-hover border-0">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Daily Communication</h3>
+                <p className="text-muted-foreground text-sm">
+                  Regular updates via WhatsApp, email, and Google Meet during working hours (8 AM–4 PM)
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Code Quality Assurance</h3>
+                <p className="text-muted-foreground text-sm">
+                  Code reviews, testing, and optimization ensure enterprise-level quality
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">Milestone-Based Delivery</h3>
+                <p className="text-muted-foreground text-sm">
+                  Clear milestones defined at project start with demos at each phase
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Development Process */}
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Our Development Process
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              From idea to delivery—transparent, structured, and client-centric
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <Card className="card-hover border-0 text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  1
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Discovery</h3>
+                <p className="text-sm text-muted-foreground">
+                  We listen to your vision, goals, and requirements
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0 text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  2
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Planning</h3>
+                <p className="text-sm text-muted-foreground">
+                  Strategy, timeline, and milestones agreed upon
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0 text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  3
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Development</h3>
+                <p className="text-sm text-muted-foreground">
+                  Weekly progress reports and demos at key milestones
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0 text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  4
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Review</h3>
+                <p className="text-sm text-muted-foreground">
+                  Client feedback and adjustments before launch
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="card-hover border-0 text-center">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  5
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Delivery</h3>
+                <p className="text-sm text-muted-foreground">
+                  Documentation, training, and feedback form provided
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Why We're Dependable */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -262,9 +398,9 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-3">Working Hours</h3>
+                <h3 className="text-lg font-semibold mb-3">Multiple Locations</h3>
                 <p className="text-muted-foreground text-sm">
-                  8 AM – 4 PM, Monday–Friday. Available via WhatsApp, email, Google Meet, or in-person at our Westlands office
+                  8 AM – 4 PM, Mon–Fri. Offices in Westlands (Waiyaki Way), Kangundo Road, and Magadi Road
                 </p>
               </CardContent>
             </Card>
@@ -309,7 +445,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-primary to-accent">
+      <section className="py-8 bg-gradient-to-r from-primary to-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Elevate Your Digital Presence?

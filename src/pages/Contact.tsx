@@ -76,15 +76,14 @@ const Contact = () => {
   ];
 
   const officeHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM PST" },
-    { day: "Saturday", hours: "10:00 AM - 2:00 PM PST" },
-    { day: "Sunday", hours: "Closed" }
+    { day: "Monday - Friday", hours: "8:00 AM - 4:00 PM EAT" },
+    { day: "Saturday - Sunday", hours: "By Appointment Only" }
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -99,7 +98,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -132,7 +131,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -260,11 +259,12 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2">Address</h4>
+                    <h4 className="font-semibold mb-2">Our Locations</h4>
                     <p className="text-muted-foreground">
-                      123 Tech Street<br />
-                      San Francisco, CA 94105<br />
-                      United States
+                      <strong>Main Office:</strong> Westlands, Waiyaki Way<br />
+                      <strong>Branch:</strong> Kangundo Road<br />
+                      <strong>Branch:</strong> Magadi Road<br />
+                      Nairobi, Kenya
                     </p>
                   </div>
                   <div>

@@ -8,6 +8,25 @@ const Services = () => {
   const packages = [
     {
       id: 1,
+      name: "One-Pager Website",
+      subtitle: "Budget-Friendly Landing Page",
+      price: "KES 25,000",
+      hirePurchase: "KES 15,000 upfront + 10,000 x 1 monthly",
+      timeline: "3–5 working days",
+      icon: <Zap className="w-8 h-8" />,
+      features: [
+        "Single-page responsive website",
+        "Perfect for portfolios, events, or simple business info",
+        "Free SSL Certificate (security)",
+        "Domain name (.co.ke or .com) – 1 year included",
+        "Basic hosting (1 year included)",
+        "WhatsApp integration",
+        "Mobile-friendly design"
+      ],
+      gradient: "from-cyan-500 to-blue-400"
+    },
+    {
+      id: 2,
       name: "Starter Website",
       subtitle: "For Small Businesses / Individuals",
       price: "KES 45,000",
@@ -26,7 +45,7 @@ const Services = () => {
       gradient: "from-blue-500 to-cyan-500"
     },
     {
-      id: 2,
+      id: 3,
       name: "Business Pro Website",
       subtitle: "For Growing SMEs",
       price: "KES 80,000",
@@ -46,7 +65,7 @@ const Services = () => {
       gradient: "from-primary to-accent"
     },
     {
-      id: 3,
+      id: 4,
       name: "Ecommerce Website",
       subtitle: "For Online Stores",
       price: "KES 150,000",
@@ -66,7 +85,26 @@ const Services = () => {
       gradient: "from-emerald-500 to-teal-500"
     },
     {
-      id: 4,
+      id: 5,
+      name: "WordPress / Divi Website",
+      subtitle: "Content Management Made Easy",
+      price: "KES 60,000",
+      hirePurchase: "KES 30,000 upfront + 15,000 x 2 monthly",
+      timeline: "10–14 working days",
+      icon: <Users className="w-8 h-8" />,
+      features: [
+        "WordPress website with Divi builder",
+        "Easy-to-edit drag-and-drop interface",
+        "Up to 10 pages",
+        "Domain + Hosting (1 year included)",
+        "2 Business Emails Setup",
+        "SEO basics and mobile responsiveness",
+        "Training on how to update content yourself"
+      ],
+      gradient: "from-indigo-500 to-purple-500"
+    },
+    {
+      id: 6,
       name: "Custom Web / App Development",
       subtitle: "For Enterprises & Startups",
       price: "Starting from KES 250,000",
@@ -86,6 +124,21 @@ const Services = () => {
   ];
 
   const additionalServices = [
+    {
+      name: "Logo Design",
+      price: "KES 5,000 – KES 15,000",
+      description: "Professional logo design with 3 concepts, unlimited revisions, and source files"
+    },
+    {
+      name: "Brochure & Flier Design",
+      price: "KES 3,000 – KES 8,000",
+      description: "Print-ready designs for brochures, fliers, posters, and banners"
+    },
+    {
+      name: "Portfolio Website (One-Pager)",
+      price: "KES 25,000",
+      description: "Single-page portfolio site perfect for creatives and professionals"
+    },
     {
       name: "Website Audit",
       price: "KES 15,000",
@@ -170,7 +223,7 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -197,7 +250,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -223,7 +276,7 @@ const Services = () => {
       </section>
 
       {/* Packages */}
-      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -279,7 +332,7 @@ const Services = () => {
       </section>
 
       {/* Additional Services */}
-      <section className="py-12 bg-background">
+      <section className="py-8 bg-background">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -287,7 +340,7 @@ const Services = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {additionalServices.map((service, index) => (
               <Card key={index} className="card-hover border-0">
                 <CardContent className="p-6">
@@ -318,7 +371,7 @@ const Services = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -342,7 +395,7 @@ const Services = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-12 bg-gradient-to-r from-primary to-accent">
+      <section className="py-8 bg-gradient-to-r from-primary to-accent">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Get Started?
@@ -352,7 +405,7 @@ const Services = () => {
             <br />
             📥 Download our PDF or request a custom quote tailored to your project
             <br />
-            📍 Visit us in Nairobi at Westlands, Waiyaki Way
+            📍 Visit us in Nairobi: Westlands (Waiyaki Way), Kangundo Road, or Magadi Road
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
@@ -371,7 +424,7 @@ const Services = () => {
           <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              Westlands, Waiyaki Way, Nairobi
+              Westlands (Waiyaki Way) | Kangundo Road | Magadi Road
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />

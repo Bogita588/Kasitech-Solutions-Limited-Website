@@ -82,9 +82,13 @@ const Footer = () => {
                 <Mail className="w-4 h-4 mr-2" />
                 hello@brianixtech.com
               </a>
-              <div className="flex items-center text-muted-foreground text-sm">
-                <MapPin className="w-4 h-4 mr-2" />
-                San Francisco, CA
+              <div className="flex items-start text-muted-foreground text-sm">
+                <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
+                <div>
+                  Westlands (Waiyaki Way)<br />
+                  Kangundo Road<br />
+                  Magadi Road, Nairobi
+                </div>
               </div>
               <a
                 href="https://wa.me/1234567890"
