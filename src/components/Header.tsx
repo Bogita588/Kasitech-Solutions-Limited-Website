@@ -30,8 +30,8 @@ const Header = () => {
             <span className="font-bold text-xl text-foreground">Brianix Tech</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center flex-1 space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -47,8 +47,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Contact Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Contact Actions - Right Aligned */}
+          <div className="hidden lg:flex items-center space-x-3">
             <a
               href="tel:+1234567890"
               className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"

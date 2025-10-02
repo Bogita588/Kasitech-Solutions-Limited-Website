@@ -72,23 +72,16 @@ const Index = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="relative mb-8">
             <div className="absolute -inset-8 bg-gradient-to-r from-accent/30 via-primary/40 to-accent/30 blur-3xl rounded-full animate-pulse"></div>
-            <h1 className="relative text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight tracking-tight">
+            <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
               <AnimatedText 
-                text="We Build Stunning" 
+                text="We Build Stunning Websites & Apps" 
                 className="block drop-shadow-2xl" 
-                speed={80}
+                speed={60}
               />
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-foreground to-white">
-                <AnimatedText 
-                  text="Websites & Apps" 
-                  className="animate-pulse" 
-                  speed={60}
-                />
-              </span>
               <AnimatedText 
                 text="That Grow Your Business" 
-                className="block bg-gradient-to-r from-accent-foreground via-white to-accent-foreground bg-clip-text text-transparent drop-shadow-lg" 
-                speed={70}
+                className="block text-accent-foreground drop-shadow-lg mt-2" 
+                speed={60}
               />
             </h1>
           </div>
