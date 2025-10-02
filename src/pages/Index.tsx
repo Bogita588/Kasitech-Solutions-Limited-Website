@@ -70,9 +70,9 @@ const Index = () => {
         <ParticleBackground />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative mb-8">
+          <div className="relative mb-8 mt-16">
             <div className="absolute -inset-8 bg-gradient-to-r from-accent/30 via-primary/40 to-accent/30 blur-3xl rounded-full animate-pulse"></div>
-            <h1 className="relative text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
+            <h1 className="relative text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
               <AnimatedText 
                 text="We Build Stunning Websites & Apps" 
                 className="block drop-shadow-2xl" 
