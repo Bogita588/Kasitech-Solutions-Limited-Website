@@ -54,7 +54,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              About Brianix Tech Solutions
+              About Us
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               We bring your digital vision to life — with clean code, smart strategy, 
@@ -118,9 +118,6 @@ const About = () => {
       <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What Drives Us
-            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Our core values guide everything we do, from initial consultation to ongoing support.
             </p>
@@ -198,11 +195,11 @@ const About = () => {
       </section>
 
       {/* Africa Projects - Future Initiatives */}
-      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section id="african-projects" className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Building Africa's Digital Future
+              Our African-Oriented Projects
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Our vision extends beyond client projects. We're developing transformative platforms 
@@ -215,11 +212,11 @@ const About = () => {
               <CardContent className="p-8 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <Globe className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-semibold mb-3">AfriRoot</h3>
+                  <GraduationCap className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-2xl font-semibold mb-3">InternKenya</h3>
                   <p className="text-muted-foreground mb-4">
-                    African family tree and heritage platform connecting generations and preserving 
-                    our rich cultural history for future generations.
+                    A platform designed to ease the transition from university to the job field for graduates in Kenya. 
+                    Connects students with internships, mentorship, and career development opportunities.
                   </p>
                   <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
                     In Development
@@ -232,48 +229,14 @@ const About = () => {
               <CardContent className="p-8 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <GraduationCap className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-semibold mb-3">EduTrack</h3>
+                  <TrendingUp className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-2xl font-semibold mb-3">ProjectTract</h3>
                   <p className="text-muted-foreground mb-4">
-                    Affordable e-learning and school management system making quality education 
-                    accessible to schools across Kenya and beyond.
+                    A public web application where Kenyans can track the progress of government and public-funded projects. 
+                    Promotes transparency and accountability in public spending.
                   </p>
                   <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
                     Planning Phase
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="card-hover border-0 group overflow-hidden">
-              <CardContent className="p-8 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <TrendingUp className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-semibold mb-3">SME Boost</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Comprehensive SME digitization toolkit helping small businesses compete in the 
-                    digital economy with affordable, powerful tools.
-                  </p>
-                  <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                    Concept Stage
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="card-hover border-0 group overflow-hidden">
-              <CardContent className="p-8 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <Building className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-semibold mb-3">CivicTech Hub</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Governance and civic participation tools empowering citizens to engage with 
-                    their governments and drive positive change.
-                  </p>
-                  <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                    Research Phase
                   </div>
                 </div>
               </CardContent>

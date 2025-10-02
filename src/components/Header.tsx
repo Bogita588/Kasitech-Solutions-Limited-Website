@@ -60,12 +60,12 @@ const Header = () => {
                     About
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="w-[200px] p-2 bg-background">
+                    <ul className="w-[200px] p-2 bg-background/95 backdrop-blur-md border border-border/50 shadow-xl">
                       <li>
                         <NavigationMenuLink asChild>
                           <Link
                             to="/about"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
                           >
                             <div className="text-sm font-medium">About Us</div>
                             <p className="text-xs leading-snug text-muted-foreground">
@@ -78,11 +78,11 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/about#african-projects"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
                           >
                             <div className="text-sm font-medium">African Projects</div>
                             <p className="text-xs leading-snug text-muted-foreground">
-                              AfriRoot, EduTrack & more
+                              InternKenya, ProjectTract & more
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -96,12 +96,12 @@ const Header = () => {
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="w-[200px] p-2 bg-background">
+                    <ul className="w-[200px] p-2 bg-background/95 backdrop-blur-md border border-border/50 shadow-xl">
                       <li>
                         <NavigationMenuLink asChild>
                           <Link
                             to="/services"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
                           >
                             <div className="text-sm font-medium">All Services</div>
                             <p className="text-xs leading-snug text-muted-foreground">
@@ -114,7 +114,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <Link
                             to="/services#packages"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
                           >
                             <div className="text-sm font-medium">Packages</div>
                             <p className="text-xs leading-snug text-muted-foreground">

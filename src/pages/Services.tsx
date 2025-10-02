@@ -227,7 +227,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Services & Pricing
+              Our Services & Packages
             </h1>
             <p className="text-lg text-muted-foreground mb-6">
               Affordable, flexible, and tailored solutions for Nairobi SMEs. 
@@ -250,7 +250,7 @@ const Services = () => {
       </section>
 
       {/* Packages */}
-      <section className="py-8 bg-background">
+      <section id="packages" className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
