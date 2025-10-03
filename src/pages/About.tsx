@@ -1,6 +1,7 @@
 import { Users, Award, Clock, Heart, Globe, GraduationCap, TrendingUp, Building, MessageSquare, BookOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { SEO } from '@/components/SEO';
 
 const About = () => {
   const team = [
@@ -48,7 +49,13 @@ const About = () => {
   ];
 
   return (
-    <div>
+    <>
+      <SEO 
+        title="About Us - Brianix Tech Solutions | Meet Our Team & African Projects"
+        description="Learn about Brianix Tech Solutions, our passionate team, and our African-oriented projects: InternKenya & ProjectTract. Professional web development, SEO, and app development services in Nairobi."
+        keywords="about Brianix Tech, web development team Nairobi, InternKenya, ProjectTract, African tech projects, Kenya software developers, digital transformation Africa"
+      />
+      <div>
       {/* Hero Section */}
       <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -352,6 +359,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import { ExternalLink, ArrowRight, Star, TrendingUp, Zap, Shield } from 'lucide-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { SEO } from '@/components/SEO';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -151,7 +152,13 @@ const Portfolio = () => {
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
-    <div>
+    <>
+      <SEO 
+        title="Portfolio - Our Work & Success Stories | Brianix Tech Solutions"
+        description="View our portfolio of successful web development, mobile app, SEO, and e-commerce projects. Real results: 300% increase in sales, 400% boost in organic traffic, 50+ completed projects."
+        keywords="web development portfolio Kenya, app development case studies, SEO success stories Nairobi, ecommerce projects Kenya, Brianix Tech portfolio, Nairobi web design projects"
+      />
+      <div>
       {/* Hero Section */}
       <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -359,6 +366,7 @@ const Portfolio = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

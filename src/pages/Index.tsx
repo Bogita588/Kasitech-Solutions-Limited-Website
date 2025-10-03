@@ -103,8 +103,8 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-accent/90 to-primary/95 dark:from-primary/98 dark:via-accent/95 dark:to-primary/98"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-primary/20 to-accent/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-accent/90 dark:from-primary/98 dark:via-primary/95 dark:to-accent/95"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-accent/20 to-primary/30"></div>
         </div>
         
         <ParticleBackground />

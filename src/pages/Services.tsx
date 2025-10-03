@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { SEO } from '@/components/SEO';
 
 const Services = () => {
   const packages = [
@@ -221,7 +222,13 @@ const Services = () => {
   };
 
   return (
-    <div>
+    <>
+      <SEO 
+        title="Services & Packages - Affordable Web Development, SEO & Apps | Brianix Tech"
+        description="Explore our affordable web development packages, SEO services, and custom app development. Flexible hire-purchase options from KES 25,000. Perfect for Nairobi SMEs and startups."
+        keywords="web development packages Kenya, affordable SEO services Nairobi, website packages Nairobi, ecommerce development Kenya, custom app development, WordPress development, hire purchase web development"
+      />
+      <div>
       {/* Hero Section */}
       <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -447,6 +454,7 @@ const Services = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

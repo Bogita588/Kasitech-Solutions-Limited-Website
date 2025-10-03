@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { SEO } from '@/components/SEO';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -81,7 +82,13 @@ const Contact = () => {
   ];
 
   return (
-    <div>
+    <>
+      <SEO 
+        title="Contact Us - Get Free Quote | Brianix Tech Solutions Nairobi"
+        description="Contact Brianix Tech Solutions for professional web development, SEO, and app development services in Nairobi. Free consultation and quote. WhatsApp, phone, and email support available."
+        keywords="contact Brianix Tech, web development Nairobi contact, free quote web development Kenya, WhatsApp business support Nairobi, Westlands tech company, Kangundo Road developers"
+      />
+      <div>
       {/* Hero Section */}
       <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,38 +104,8 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-8 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-xl text-muted-foreground">
-              Choose your preferred way to reach us
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {contactMethods.map((method, index) => (
-              <Card key={index} className="card-hover border-0 text-center">
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 ${method.color} rounded-full flex items-center justify-center text-white mx-auto mb-4`}>
-                    {method.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{method.title}</h3>
-                  <p className="text-muted-foreground mb-4">{method.description}</p>
-                  <Button asChild variant="outline" className="w-full">
-                    <a href={method.link} target={method.link.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
-                      {method.action}
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form & Info */}
-      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+      <section className="py-8 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -333,7 +310,41 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Methods */}
+      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Other Ways to Reach Us
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Choose your preferred way to connect
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {contactMethods.map((method, index) => (
+              <Card key={index} className="card-hover border-0 text-center">
+                <CardContent className="p-8">
+                  <div className={`w-16 h-16 ${method.color} rounded-full flex items-center justify-center text-white mx-auto mb-4`}>
+                    {method.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{method.title}</h3>
+                  <p className="text-muted-foreground mb-4">{method.description}</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <a href={method.link} target={method.link.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer">
+                      {method.action}
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   );
 };
 
