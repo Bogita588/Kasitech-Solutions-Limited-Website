@@ -4,8 +4,41 @@ import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/hero-bg.jpg';
 import { AnimatedText } from '@/components/AnimatedText';
 import { ParticleBackground } from '@/components/ParticleBackground';
+import { SEO } from '@/components/SEO';
 
 const Index = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Brianix Tech Solutions",
+    "description": "Professional web development, mobile apps, and SEO services for SMEs & startups",
+    "url": "https://brianixtech.com",
+    "logo": "https://brianixtech.com/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-234-567-890",
+      "contactType": "Customer Service",
+      "areaServed": "KE",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Westlands, Waiyaki Way",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/brianixtech",
+      "https://twitter.com/brianixtech",
+      "https://github.com/brianixtech"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "50"
+    }
+  };
+
   const services = [
     {
       icon: <Globe className="w-8 h-8" />,
@@ -56,9 +89,16 @@ const Index = () => {
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <>
+      <SEO 
+        title="Brianix Tech Solutions - Custom Web Development, Apps & SEO Services"
+        description="Professional web development, mobile apps, and SEO services for SMEs & startups. Custom digital solutions that grow your business. 99% client satisfaction, 50+ projects completed."
+        keywords="web development Kenya, mobile app development, SEO services Nairobi, custom software development, startup web solutions, SME digital services"
+        structuredData={structuredData}
+      />
+      <div>
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -98,16 +138,16 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center fade-in mb-12">
-            <Button className="btn-hero text-lg px-10 py-7 shadow-2xl hover:shadow-accent/50 transition-all" size="lg">
+            <Button className="btn-hero text-lg px-10 py-7 shadow-2xl hover:shadow-accent/50 transition-all" size="lg" aria-label="Get a free quote for your project">
               Get a Free Quote
-              <ArrowRight className="w-6 h-6 ml-2" />
+              <ArrowRight className="w-6 h-6 ml-2" aria-hidden="true" />
             </Button>
-            <Button variant="outline" size="lg" className="btn-secondary text-lg px-10 py-7 bg-white/10 backdrop-blur-md border-2 border-white/30 hover:bg-white/20">
+            <Button variant="outline" size="lg" className="btn-secondary text-lg px-10 py-7 bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20" aria-label="View our portfolio of completed projects">
               View Our Work
             </Button>
           </div>
           
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="mt-16 hidden md:grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group hover:scale-110 transition-transform duration-300">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl group-hover:shadow-accent/50 transition-all">
@@ -121,9 +161,9 @@ const Index = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
+      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary" aria-labelledby="trust-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 id="trust-heading" className="text-3xl md:text-4xl font-bold mb-4">
             Why Choose Brianix Tech Solutions?
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
@@ -132,17 +172,17 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card-hover text-center group">
-              <Zap className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <Zap className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <h3 className="text-xl font-semibold mb-2">Fast Delivery</h3>
               <p className="text-muted-foreground">Quick turnaround without compromising quality</p>
             </div>
             <div className="card-hover text-center group">
-              <Users className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <Users className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <h3 className="text-xl font-semibold mb-2">Dedicated Team</h3>
               <p className="text-muted-foreground">Personal attention to every project detail</p>
             </div>
             <div className="card-hover text-center group">
-              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
               <p className="text-muted-foreground">Track record of successful projects</p>
             </div>
@@ -151,10 +191,10 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-8 bg-background">
+      <section className="py-8 bg-background" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 id="services-heading" className="text-3xl md:text-4xl font-bold mb-4">
               Our Core Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -166,15 +206,15 @@ const Index = () => {
             {services.map((service, index) => (
               <Card key={index} className="card-hover border-0 group overflow-hidden">
                 <CardContent className="p-8 relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
                   <div className="relative z-10">
-                    <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                    <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">{service.icon}</div>
                     <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                     <p className="text-muted-foreground mb-4">{service.description}</p>
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-accent mr-2" />
+                          <CheckCircle className="w-4 h-4 text-primary mr-2" aria-hidden="true" />
                           {feature}
                         </li>
                       ))}
@@ -463,7 +503,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

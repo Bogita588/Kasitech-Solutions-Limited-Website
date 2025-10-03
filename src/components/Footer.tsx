@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-primary/5 to-accent/5 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 justify-center md:justify-start">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">BT</span>
               </div>
@@ -17,14 +17,14 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm">
               Your Digital Growth Partner – Web, Apps, SEO & Custom Solutions for SMEs and startups.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <div className="flex space-x-4 justify-center md:justify-start">
+              <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Visit our LinkedIn page">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="Follow us on Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="View our GitHub profile">
                 <Github className="w-5 h-5" />
               </a>
             </div>
@@ -70,20 +70,22 @@ const Footer = () => {
             <div className="flex flex-col space-y-3">
               <a
                 href="tel:+1234567890"
-                className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm"
+                className="flex items-center justify-center md:justify-start text-muted-foreground hover:text-primary transition-colors text-sm"
+                aria-label="Call us at +1 (234) 567-890"
               >
-                <Phone className="w-4 h-4 mr-2" />
+                <Phone className="w-4 h-4 mr-2 text-primary" aria-hidden="true" />
                 +1 (234) 567-890
               </a>
               <a
                 href="mailto:hello@brianixtech.com"
-                className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm"
+                className="flex items-center justify-center md:justify-start text-muted-foreground hover:text-primary transition-colors text-sm"
+                aria-label="Email us at hello@brianixtech.com"
               >
-                <Mail className="w-4 h-4 mr-2" />
+                <Mail className="w-4 h-4 mr-2 text-primary" aria-hidden="true" />
                 hello@brianixtech.com
               </a>
-              <div className="flex items-start text-muted-foreground text-sm">
-                <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
+              <div className="flex items-start justify-center md:justify-start text-muted-foreground text-sm">
+                <MapPin className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-primary" aria-hidden="true" />
                 <div>
                   Westlands (Waiyaki Way)<br />
                   Kangundo Road<br />
@@ -94,9 +96,10 @@ const Footer = () => {
                 href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp w-fit"
+                className="btn-whatsapp w-fit mx-auto md:mx-0"
+                aria-label="Contact us on WhatsApp"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" aria-hidden="true" />
                 WhatsApp
               </a>
             </div>

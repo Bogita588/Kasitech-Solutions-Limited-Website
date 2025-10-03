@@ -135,13 +135,38 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
+
+  /* Unique heading colors for better visual hierarchy */
+  h1 {
+    @apply text-foreground;
+  }
+
+  h2 {
+    @apply text-primary;
+  }
+
+  h3 {
+    @apply text-accent;
+  }
+
+  h4 {
+    @apply text-foreground;
+  }
+
+  h5 {
+    @apply text-muted-foreground;
+  }
+
+  h6 {
+    @apply text-primary/80;
+  }
 }
 
 @layer components {
   /* Hero button variant */
   .btn-hero {
     @apply bg-gradient-to-r from-primary to-accent text-white font-semibold px-8 py-4 rounded-xl;
-    @apply shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105;
+    @apply shadow-lg hover:shadow-xl hover:from-primary/90 hover:to-accent/90 transform hover:-translate-y-1 hover:scale-105;
     @apply transition-all duration-300 ease-out relative overflow-hidden;
   }
 
@@ -157,7 +182,7 @@ All colors MUST be HSL.
 
   /* Secondary button variant */
   .btn-secondary {
-    @apply bg-background text-primary border-2 border-primary font-semibold px-8 py-4 rounded-xl;
+    @apply bg-background text-primary border border-primary font-semibold px-8 py-4 rounded-xl;
     @apply hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-105;
     @apply transition-all duration-300 ease-out relative overflow-hidden;
     @apply dark:bg-background dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white;
