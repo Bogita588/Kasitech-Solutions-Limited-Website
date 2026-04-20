@@ -26,10 +26,12 @@ const Shop = () => {
   const { toast } = useToast();
   const products = active === 'All' ? allProducts : allProducts.filter((p) => p.category === active);
 
-  const addToInquiry = (name: string) => {
+  const orderViaWhatsApp = (name: string) => {
+    const message = encodeURIComponent(`Hello Kasitech, I would like to place an order for the following product: ${name}. Please share pricing and availability.`);
+    window.open(`https://wa.me/254723799450?text=${message}`, '_blank', 'noopener,noreferrer');
     toast({
-      title: 'Added to inquiry',
-      description: `${name} added — head to Contact to request a quote.`,
+      title: 'WhatsApp order started',
+      description: `Opening WhatsApp to order ${name}.`,
     });
   };
 
@@ -99,11 +101,12 @@ const Shop = () => {
                     </div>
                   </div>
                   <Button
-                    onClick={() => addToInquiry(p.name)}
+                    onClick={() => orderViaWhatsApp(p.name)}
                     className="mt-5 w-full bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl"
+                    aria-label={`Order ${p.name} via WhatsApp`}
                   >
                     <ShoppingCart className="w-4 h-4 mr-1" />
-                    Add to Inquiry
+                    Order via WhatsApp
                   </Button>
                 </div>
               </article>

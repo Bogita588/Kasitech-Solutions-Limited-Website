@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
+# Kasitech Solutions Website
 
-## Project info
+A modern IT company website built with React, TypeScript, Tailwind CSS, Vite and shadcn-ui. This project showcases Kasitech Solutions Limited as a trusted one-stop IT partner in Kenya, featuring service highlights, client testimonials, contact conversion paths, and a responsive layout designed for desktop and mobile.
 
-**URL**: https://lovable.dev/projects/d6d0d821-5870-4aba-95a4-7fea6caef862
+## Design Approach
 
-## How can I edit this code?
+This site is intentionally designed to communicate trust, clarity and local relevance:
 
-There are several ways of editing your application.
+- Clean, professional layout with strong visual hierarchy.
+- Service-focused sections that help visitors understand core offerings quickly.
+- A warm, approachable brand voice tailored for Kenyan businesses, schools and organisations.
+- Responsive design for seamless access across desktop, tablet and mobile.
+- Accessible navigation and button labels with semantic HTML and strong contrast.
 
-**Use Lovable**
+## Unique Features and Enhancements
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d6d0d821-5870-4aba-95a4-7fea6caef862) and start prompting.
+- Hero section with an attractive WebP background for fast loading and polished visual impact.
+- Service cards linking directly to relevant sections for easy discovery.
+- Structured JSON-LD organization metadata for better search visibility.
+- Contact-first conversion paths using WhatsApp and email links on CTAs.
+- Team and values sections that reinforce credibility.
+- WebP image assets for improved performance and optimized delivery.
+- Reusable shadcn-ui components for consistent UI and maintainable code.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+- `src/pages` — main page views including Home, About, Services, Contact, Blog, Portfolio and Shop.
+- `src/components` — shared UI components for header, footer, theme toggle, SEO helper and page sections.
+- `src/assets` — image assets used across the site.
+- `src/components/ui` — reusable UI primitives from shadcn-ui.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Setup
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd brianix-growth-hub
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open the local URL provided by Vite.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contact
 
-## What technologies are used for this project?
+- Email: `info@kasitech.co.ke`
+- WhatsApp: `+254723799450`
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d6d0d821-5870-4aba-95a4-7fea6caef862) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This README can be updated to reflect additional branding, deployment instructions, or future enhancements.

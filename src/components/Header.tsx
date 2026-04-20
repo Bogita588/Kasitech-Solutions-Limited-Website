@@ -75,16 +75,16 @@ const Header = () => {
           {/* Right cluster */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+254700000000"
+              href="tel:+254723799450"
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
               aria-label="Call Kasitech"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              +254 700 000 000
+              +254 723 799 450
             </a>
             <ThemeToggle />
             <Button asChild className="bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl">
-              <Link to="/contact">Get a Quote</Link>
+              <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer">Get a Quote</a>
             </Button>
           </div>
 
@@ -123,7 +123,7 @@ const Header = () => {
                 </NavLink>
               ))}
               <Button asChild className="bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl mt-3">
-                <Link to="/contact">Get a Quote</Link>
+                <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer">Get a Quote</a>
               </Button>
             </nav>
           </div>

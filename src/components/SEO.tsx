@@ -14,7 +14,7 @@ export const SEO = ({
   description, 
   keywords,
   ogType = 'website',
-  ogImage = 'https://lovable.dev/opengraph-image-p98pqg.png',
+  ogImage = 'https://Kasitech.dev/opengraph-image-p98pqg.png',
   structuredData 
 }: SEOProps) => {
   useEffect(() => {
@@ -44,12 +44,23 @@ export const SEO = ({
     updateMetaTag('og:description', description, true);
     updateMetaTag('og:type', ogType, true);
     updateMetaTag('og:image', ogImage, true);
-    
+    updateMetaTag('og:url', window.location.href, true);
+
+    // Canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', window.location.href);
+
     // Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', ogImage);
+    updateMetaTag('robots', 'index, follow');
     
     // Add structured data
     if (structuredData) {

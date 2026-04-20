@@ -5,11 +5,19 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
+import consultingImage from '@/assets/hero-bg.webp';
+import cybersecurityImage from '@/assets/product-server.webp';
+import developmentImage from '@/assets/product-laptop.webp';
+import networkingImage from '@/assets/product-router.webp';
+import trainingImage from '@/assets/blog-training.webp';
+import equipmentImage from '@/assets/product-cctv.webp';
 
 const services = [
   {
     id: 'consulting',
     icon: Lightbulb,
+    image: consultingImage,
+    imageAlt: 'Consulting meeting in a modern office',
     title: 'IT Consulting',
     intro: 'Strategic guidance to align technology investments with business outcomes.',
     benefits: [
@@ -22,6 +30,8 @@ const services = [
   {
     id: 'cybersecurity',
     icon: Shield,
+    image: cybersecurityImage,
+    imageAlt: 'Secure server rack and cybersecurity systems',
     title: 'Cybersecurity',
     intro: 'Protect your data, systems and reputation with defence-in-depth security.',
     benefits: [
@@ -34,6 +44,8 @@ const services = [
   {
     id: 'development',
     icon: Code2,
+    image: developmentImage,
+    imageAlt: 'Developer using laptop in an office setting',
     title: 'Web & App Development',
     intro: 'Custom web platforms and mobile apps engineered for performance and scale.',
     benefits: [
@@ -46,6 +58,8 @@ const services = [
   {
     id: 'networking',
     icon: Network,
+    image: networkingImage,
+    imageAlt: 'Network equipment in a modern office environment',
     title: 'Networking Solutions',
     intro: 'Reliable, secure networks designed for the demands of modern business.',
     benefits: [
@@ -58,6 +72,8 @@ const services = [
   {
     id: 'training',
     icon: GraduationCap,
+    image: trainingImage,
+    imageAlt: 'Colleagues in a training session',
     title: 'IT Training & Certifications',
     intro: 'Upskill your team with hands-on training led by certified instructors.',
     benefits: [
@@ -70,6 +86,8 @@ const services = [
   {
     id: 'equipment',
     icon: Cpu,
+    image: equipmentImage,
+    imageAlt: 'IT equipment and hardware ready for installation',
     title: 'IT Equipment Supply',
     intro: 'Genuine, warrantied hardware delivered and installed by professionals.',
     benefits: [
@@ -106,46 +124,48 @@ const Services = () => (
 
     {/* Services list */}
     <section className="section">
-      <div className="container-page space-y-12">
-        {services.map((s, idx) => (
-          <article
-            key={s.id}
-            id={s.id}
-            className="grid lg:grid-cols-12 gap-8 items-center scroll-mt-24"
-          >
-            <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-primary relative overflow-hidden shadow-card">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--accent)/0.4),_transparent_60%)]" />
-                <s.icon className="w-24 h-24 text-white/30 absolute bottom-6 right-6" aria-hidden="true" />
+      <div className="container-page">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((s) => (
+            <article key={s.id} className="overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition hover:-translate-y-1 hover:shadow-hover">
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.imageAlt}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute left-5 bottom-5 inline-flex items-center gap-2 rounded-full bg-primary/85 px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg">
+                  <s.icon className="w-4 h-4" aria-hidden="true" />
+                  {s.title}
+                </div>
               </div>
-            </div>
-            <div className={`lg:col-span-7 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-              <div className="feature-icon"><s.icon className="w-6 h-6" aria-hidden="true" /></div>
-              <h2 className="heading-md mt-5">{s.title}</h2>
-              <p className="lead mt-3">{s.intro}</p>
-              <ul className="mt-6 grid sm:grid-cols-2 gap-3">
-                {s.benefits.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-sm text-foreground/85">
-                    <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 shrink-0" aria-hidden="true" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Button asChild className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-xl h-11 px-6">
-                  <Link to="/contact">Request a Quote</Link>
-                </Button>
-                {s.cta && (
-                  <Button asChild variant="outline" className="rounded-xl h-11 px-6">
-                    <Link to={s.cta.href}>
-                      {s.cta.label} <ArrowRight className="w-4 h-4 ml-1" />
-                    </Link>
+              <div className="p-6">
+                <p className="lead text-foreground/90">{s.intro}</p>
+                <ul className="mt-5 space-y-3 text-sm text-foreground/80">
+                  {s.benefits.map((b) => (
+                    <li key={b} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-accent mt-1 shrink-0" aria-hidden="true" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Button asChild className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-xl h-11 px-6">
+                    <Link to="/contact">Request a Quote</Link>
                   </Button>
-                )}
+                  {s.cta && (
+                    <Button asChild variant="outline" className="rounded-xl h-11 px-6">
+                      <Link to={s.cta.href}>
+                        {s.cta.label} <ArrowRight className="w-4 h-4 ml-1" />
+                      </Link>
+                    </Button>
+                  )}
+                </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
 

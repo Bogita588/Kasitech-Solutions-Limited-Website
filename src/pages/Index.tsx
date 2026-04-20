@@ -5,7 +5,28 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
-import heroImage from '@/assets/kasitech-hero.jpg';
+import aboutImage from '@/assets/kasitech-hero.webp';
+
+const heroSideImage = 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80';
+
+const faqItems = [
+  {
+    question: 'How quickly can Kasitech respond to on-site support requests in Nairobi?',
+    answer: 'Our Nairobi-based team aims to reach your site within hours for urgent IT incidents, and we offer remote support for less critical issues the same day.'
+  },
+  {
+    question: 'Can Kasitech help my business move to the cloud without disrupting operations?',
+    answer: 'Yes. We design step-by-step migration plans with pilot validation, secure data transfer and support so systems stay available throughout the move.'
+  },
+  {
+    question: 'Do you provide training for our staff after implementing a new solution?',
+    answer: 'Absolutely. We offer hands-on user training, technical workshops and certification coaching to help your team adopt new systems confidently.'
+  },
+  {
+    question: 'What types of IT equipment can Kasitech supply and install?',
+    answer: 'We source laptops, desktops, servers, networking gear, CCTV systems, UPS and printers from trusted brands to match your performance and budget goals.'
+  },
+];
 
 const services = [
   { icon: Lightbulb, title: 'IT Consulting', desc: 'Strategy and advisory to align technology with your business goals.', href: '/services#consulting' },
@@ -52,7 +73,7 @@ const Index = () => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+254-700-000-000",
+      "telephone": "+254-723-799-450",
       "contactType": "customer service",
       "areaServed": "KE",
       "availableLanguage": ["English", "Swahili"]
@@ -69,52 +90,53 @@ const Index = () => {
       />
 
       {/* HERO */}
-      <section className="relative overflow-hidden" aria-label="Hero">
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Kasitech Solutions data center with glowing servers"
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/70" />
-        </div>
+      <section className="relative overflow-hidden bg-slate-950 text-white" aria-label="Hero">
+        <div className="absolute inset-0 bg-slate-950/95" />
 
         <div className="relative container-page pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="max-w-3xl">
-            <span className="eyebrow text-accent-foreground/90 bg-accent/20 px-3 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Trusted IT Partner in Kenya
-            </span>
-            <h1 className="heading-xl text-white mt-5">
-              Powering Businesses with{' '}
-              <span className="bg-gradient-to-r from-accent to-cta bg-clip-text text-transparent">
-                Smart IT Solutions
+          <div className="grid items-center gap-10 xl:grid-cols-[1.1fr_0.9fr]">
+            <div className="max-w-2xl">
+              <span className="eyebrow text-accent-foreground/90 bg-accent/20 px-3 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Trusted IT Partner in Kenya
               </span>
-            </h1>
-            <p className="lead text-white/85 mt-6 max-w-2xl">
-              From consulting and cybersecurity to development, networking and equipment supply —
-              Kasitech delivers reliable, modern technology that helps your organisation grow.
-            </p>
-            <div className="mt-8 flex flex-col xs:flex-row gap-3">
-              <Button asChild className="btn-cta text-base h-12 px-7">
-                <Link to="/contact">
+              <h1 className="heading-xl text-white mt-5">
+                Powering Businesses with{' '}
+                <span className="bg-gradient-to-r from-accent to-cta bg-clip-text text-transparent">
+                  Smart IT Solutions
+                </span>
+              </h1>
+              <p className="lead text-white/85 mt-6 max-w-2xl">
+                From consulting and cybersecurity to development, networking and equipment supply —
+                Kasitech delivers reliable, modern technology that helps your organisation grow.
+              </p>
+              <div className="mt-8 flex flex-col xs:flex-row gap-3">
+                <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer" className="btn-cta text-base h-12 px-7 inline-flex items-center">
                   Get a Free Consultation <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="btn-outline-light text-base h-12 px-7">
-                <Link to="/services">Explore Our Services</Link>
-              </Button>
+                </a>
+                <Button asChild variant="outline" className="btn-outline-light text-base h-12 px-7">
+                  <a href="mailto:info@kasitech.co.ke">Email Us</a>
+                </Button>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
+                {['ISO-aligned processes', 'Local Nairobi team', 'SLA-backed support'].map((t) => (
+                  <div key={t} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-accent" aria-hidden="true" />
+                    {t}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Quick trust pills */}
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
-              {['ISO-aligned processes', 'Local Nairobi team', 'SLA-backed support'].map((t) => (
-                <div key={t} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-accent" aria-hidden="true" />
-                  {t}
-                </div>
-              ))}
+            <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
+              <img
+                src={heroSideImage}
+                alt="Professionals collaborating in a modern office"
+                width={920}
+                height={620}
+                className="w-full h-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent" />
             </div>
           </div>
         </div>
@@ -166,8 +188,13 @@ const Index = () => {
       <section className="section" aria-labelledby="about-preview-heading">
         <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl bg-gradient-primary overflow-hidden shadow-card">
-              <div className="w-full h-full bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--accent)/0.4),_transparent_60%)]" />
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-card">
+              <img
+                src={aboutImage}
+                alt="Kasitech team working on IT solutions"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
             <div className="absolute -bottom-6 -right-6 hidden md:block bg-card border border-border rounded-2xl p-5 shadow-hover w-56">
               <div className="flex items-center gap-2 text-cta">
@@ -225,6 +252,25 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQS */}
+      <section className="section" aria-labelledby="faq-heading">
+        <div className="container-page">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 id="faq-heading" className="heading-lg mt-3">Answers to the Questions We Hear Most</h2>
+            <p className="lead mt-4">Clear guidance about delivery, timelines, support and how Kasitech helps Kenyan businesses stay secure and efficient.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {faqItems.map((faq) => (
+              <div key={faq.question} className="card-elevated p-6">
+                <h3 className="text-base font-semibold">{faq.question}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section className="section" aria-labelledby="testimonials-heading">
         <div className="container-page">
@@ -263,11 +309,11 @@ const Index = () => {
                 Talk to a Kasitech specialist today and get a tailored proposal — no obligations.
               </p>
               <div className="mt-8 flex flex-col xs:flex-row gap-3 justify-center">
-                <Button asChild className="btn-cta h-12 px-7">
-                  <Link to="/contact">Request a Quote <ArrowRight className="w-4 h-4" /></Link>
-                </Button>
+                <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer" className="btn-cta h-12 px-7 inline-flex items-center">
+                  Request a Quote <ArrowRight className="w-4 h-4" />
+                </a>
                 <Button asChild variant="outline" className="btn-outline-light h-12 px-7">
-                  <Link to="/services">View Services</Link>
+                  <a href="mailto:info@kasitech.co.ke">Email Us</a>
                 </Button>
               </div>
             </div>

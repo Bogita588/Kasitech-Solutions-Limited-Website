@@ -65,7 +65,7 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="phone" className="text-sm font-medium block mb-1.5">Phone</label>
-                  <Input id="phone" type="tel" value={form.phone} onChange={(e) => onChange('phone', e.target.value)} placeholder="+254 700 000 000" />
+                  <Input id="phone" type="tel" value={form.phone} onChange={(e) => onChange('phone', e.target.value)} placeholder="+254 723 799 450" />
                 </div>
                 <div>
                   <label htmlFor="service" className="text-sm font-medium block mb-1.5">Service Needed</label>
@@ -103,14 +103,14 @@ const Contact = () => {
             </div>
             <div className="card-elevated">
               <h3 className="text-base font-semibold flex items-center gap-2"><Phone className="w-5 h-5 text-accent" /> Call Us</h3>
-              <a href="tel:+254700000000" className="text-sm text-foreground/85 hover:text-accent block mt-3">+254 700 000 000</a>
+              <a href="tel:+254723799450" className="text-sm text-foreground/85 hover:text-accent block mt-3">+254 723 799 450</a>
               <a href="mailto:info@kasitech.co.ke" className="text-sm text-foreground/85 hover:text-accent flex items-center gap-2 mt-2"><Mail className="w-4 h-4" /> info@kasitech.co.ke</a>
             </div>
             <div className="card-elevated">
               <h3 className="text-base font-semibold flex items-center gap-2"><Clock className="w-5 h-5 text-accent" /> Hours</h3>
               <p className="text-sm text-muted-foreground mt-3">Mon – Fri: 8:00 AM – 5:30 PM<br />Sat: 9:00 AM – 1:00 PM<br />24/7 emergency support for SLA clients</p>
             </div>
-            <a href="https://wa.me/254700000000" target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full justify-center">
+            <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full justify-center">
               <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
             </a>
           </aside>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Target, Eye, Heart, Users, Award, Globe, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
+import storyImage from '@/assets/hero-bg.webp';
 
 const values = [
   { icon: Award, title: 'Excellence', desc: 'We hold ourselves to the highest standard in everything we deliver.' },
@@ -42,8 +43,12 @@ const About = () => (
     {/* Story */}
     <section className="section">
       <div className="container-page grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="aspect-[4/3] rounded-2xl bg-gradient-primary shadow-card relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--accent)/0.45),_transparent_60%)]" />
+        <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-card">
+          <img
+            src={storyImage}
+            alt="Kasitech Solutions team and technology"
+            className="w-full h-full object-cover"
+          />
         </div>
         <div>
           <span className="eyebrow">Our Story</span>
@@ -134,7 +139,7 @@ const About = () => (
             Schedule a free discovery call with our team and find out how Kasitech can help.
           </p>
           <Button asChild className="btn-cta mt-8 h-12 px-7">
-            <Link to="/contact">Talk to Our Team <ArrowRight className="w-4 h-4" /></Link>
+            <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer">Talk to Our Team <ArrowRight className="w-4 h-4" /></a>
           </Button>
         </div>
       </div>

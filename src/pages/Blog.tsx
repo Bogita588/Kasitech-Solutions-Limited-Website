@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { SEO } from '@/components/SEO';
-import cybersecurity from '@/assets/blog-cybersecurity.jpg';
-import cloud from '@/assets/blog-cloud.jpg';
-import training from '@/assets/blog-training.jpg';
+import cybersecurity from '@/assets/blog-cybersecurity.webp';
+import cloud from '@/assets/blog-cloud.webp';
+import training from '@/assets/blog-training.webp';
 
 const posts = [
   {
@@ -82,7 +82,7 @@ const Blog = () => (
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {post.readTime}</span>
                 </div>
                 <Link
-                  to="#"
+                  to={`/blog/${post.slug}`}
                   className="mt-5 inline-flex items-center text-sm font-medium text-accent group-hover:gap-2 transition-all"
                 >
                   Read article <ArrowRight className="w-4 h-4 ml-1" />
