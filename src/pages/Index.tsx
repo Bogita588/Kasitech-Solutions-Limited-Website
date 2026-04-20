@@ -1,509 +1,279 @@
-import { ArrowRight, CheckCircle, Star, Users, Zap, Globe, Smartphone, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {
+  ArrowRight, Shield, Code2, Network, GraduationCap, Cpu, Lightbulb,
+  CheckCircle2, Star, Users, Clock, Award, Quote
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import heroImage from '@/assets/hero-bg.jpg';
-import { AnimatedText } from '@/components/AnimatedText';
-import { ParticleBackground } from '@/components/ParticleBackground';
 import { SEO } from '@/components/SEO';
+import heroImage from '@/assets/kasitech-hero.jpg';
+
+const services = [
+  { icon: Lightbulb, title: 'IT Consulting', desc: 'Strategy and advisory to align technology with your business goals.', href: '/services#consulting' },
+  { icon: Shield, title: 'Cybersecurity', desc: 'Protect your data and infrastructure from evolving cyber threats.', href: '/services#cybersecurity' },
+  { icon: Code2, title: 'Web & App Development', desc: 'Modern, scalable websites, web apps and mobile applications.', href: '/services#development' },
+  { icon: Network, title: 'Networking Solutions', desc: 'Reliable network design, deployment and ongoing management.', href: '/services#networking' },
+  { icon: GraduationCap, title: 'IT Training & Certifications', desc: 'Equip your team with in-demand IT skills and certifications.', href: '/services#training' },
+  { icon: Cpu, title: 'IT Equipment Supply', desc: 'Genuine laptops, servers, networking gear, CCTV and accessories.', href: '/shop' },
+];
+
+const features = [
+  { icon: Award, title: 'Certified Experts', desc: 'A team of professionals with industry-recognised certifications.' },
+  { icon: Clock, title: '24/7 Support', desc: 'Round-the-clock assistance for mission-critical systems.' },
+  { icon: Shield, title: 'Security First', desc: 'Defense-in-depth approach baked into everything we deliver.' },
+  { icon: Users, title: 'Client-Centric', desc: 'Tailored solutions, transparent pricing and lasting partnerships.' },
+];
+
+const testimonials = [
+  { name: 'Grace Wanjiru', company: 'Acacia Microfinance', text: 'Kasitech rebuilt our entire network infrastructure with zero downtime. Truly professional team.', rating: 5 },
+  { name: 'David Otieno', company: 'BlueRock Logistics', text: 'Their cybersecurity audit caught vulnerabilities we never knew existed. Highly recommended.', rating: 5 },
+  { name: 'Asha Mohamed', company: 'Lamu Tech Hub', text: 'From web development to staff training, Kasitech is genuinely a one-stop IT partner.', rating: 5 },
+];
+
+const stats = [
+  { value: '200+', label: 'Projects Delivered' },
+  { value: '120+', label: 'Happy Clients' },
+  { value: '15+', label: 'Industries Served' },
+  { value: '24/7', label: 'Expert Support' },
+];
 
 const Index = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Brianix Tech Solutions",
-    "description": "Professional web development, mobile apps, and SEO services for SMEs & startups",
-    "url": "https://brianixtech.com",
-    "logo": "https://brianixtech.com/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-234-567-890",
-      "contactType": "Customer Service",
-      "areaServed": "KE",
-      "availableLanguage": "English"
-    },
+    "name": "Kasitech Solutions Limited",
+    "url": "https://kasitech.co.ke",
+    "logo": "https://kasitech.co.ke/logo.png",
+    "description": "One-stop IT services in Kenya — consulting, cybersecurity, development, networking, training and equipment.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Westlands, Waiyaki Way",
+      "streetAddress": "Westlands",
       "addressLocality": "Nairobi",
       "addressCountry": "KE"
     },
-    "sameAs": [
-      "https://linkedin.com/company/brianixtech",
-      "https://twitter.com/brianixtech",
-      "https://github.com/brianixtech"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "50"
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254-700-000-000",
+      "contactType": "customer service",
+      "areaServed": "KE",
+      "availableLanguage": ["English", "Swahili"]
     }
   };
 
-  const services = [
-    {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Web Development",
-      description: "Custom websites that convert visitors into customers",
-      features: ["Responsive Design", "Fast Loading", "SEO-Optimized"]
-    },
-    {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "App Development", 
-      description: "Mobile and web apps that scale with your business",
-      features: ["Cross-Platform", "User-Friendly", "Scalable"]
-    },
-    {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO Services",
-      description: "Get found by your ideal customers online",
-      features: ["Keyword Research", "Technical SEO", "Content Strategy"]
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      text: "Brianix Tech transformed our online presence. Our website traffic increased by 300% in just 3 months!",
-      rating: 5
-    },
-    {
-      name: "Michael Chen",
-      company: "GrowthCorp",
-      text: "Professional, reliable, and delivered beyond expectations. The team understood our vision perfectly.",
-      rating: 5
-    },
-    {
-      name: "Emily Rodriguez",
-      company: "InnovateLabs",
-      text: "Best investment we made this year. Our web app is now generating 50% more leads than before.",
-      rating: 5
-    }
-  ];
-
-  const stats = [
-    { number: "99%", label: "Client Satisfaction" },
-    { number: "50+", label: "Projects Completed" },
-    { number: "24/7", label: "Support Available" },
-    { number: "3x", label: "Average ROI Increase" }
-  ];
-
   return (
     <>
-      <SEO 
-        title="Brianix Tech Solutions - Custom Web Development, Apps & SEO Services"
-        description="Professional web development, mobile apps, and SEO services for SMEs & startups. Custom digital solutions that grow your business. 99% client satisfaction, 50+ projects completed."
-        keywords="web development Kenya, mobile app development, SEO services Nairobi, custom software development, startup web solutions, SME digital services"
+      <SEO
+        title="Kasitech Solutions Limited — One-Stop IT Services in Kenya"
+        description="Reliable IT consulting, cybersecurity, web & app development, networking, training and IT equipment supply across Kenya. Partner with Kasitech today."
+        keywords="IT company Kenya, IT consulting Nairobi, cybersecurity Kenya, web development Kenya, networking Nairobi, IT training, IT equipment supply Kenya"
         structuredData={structuredData}
       />
-      <div>
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hero section">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/90 to-accent/90 dark:from-primary/98 dark:via-primary/95 dark:to-accent/95"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-accent/20 to-primary/30"></div>
+
+      {/* HERO */}
+      <section className="relative overflow-hidden" aria-label="Hero">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Kasitech Solutions data center with glowing servers"
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/70" />
         </div>
-        
-        <ParticleBackground />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative mb-8 mt-16">
-            <div className="absolute -inset-8 bg-gradient-to-r from-accent/30 via-primary/40 to-accent/30 blur-3xl rounded-full animate-pulse"></div>
-            <h1 className="relative text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
-              <AnimatedText 
-                text="We Build Stunning Websites & Apps" 
-                className="block drop-shadow-2xl" 
-                speed={60}
-              />
-              <AnimatedText 
-                text="That Grow Your Business" 
-                className="block text-accent-foreground drop-shadow-lg mt-2" 
-                speed={60}
-              />
-            </h1>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/10 blur-2xl rounded-full"></div>
-            <p className="relative text-xl md:text-3xl text-white font-medium mb-10 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
-              Your Digital Transformation Partner in <span className="text-accent-foreground font-bold">Nairobi</span> & Beyond
-              <br />
-              <span className="text-lg md:text-xl text-white/90 mt-2 block">
-                Custom web development, SEO, design, & app development for SMEs & startups
+
+        <div className="relative container-page pt-20 pb-24 lg:pt-28 lg:pb-32">
+          <div className="max-w-3xl">
+            <span className="eyebrow text-accent-foreground/90 bg-accent/20 px-3 py-1 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" /> Trusted IT Partner in Kenya
+            </span>
+            <h1 className="heading-xl text-white mt-5">
+              Powering Businesses with{' '}
+              <span className="bg-gradient-to-r from-accent to-cta bg-clip-text text-transparent">
+                Smart IT Solutions
               </span>
+            </h1>
+            <p className="lead text-white/85 mt-6 max-w-2xl">
+              From consulting and cybersecurity to development, networking and equipment supply —
+              Kasitech delivers reliable, modern technology that helps your organisation grow.
             </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center fade-in mb-12">
-            <Button className="btn-hero text-lg px-10 py-7 shadow-2xl hover:shadow-accent/50 transition-all" size="lg" aria-label="Get a free quote for your project">
-              Get a Free Quote
-              <ArrowRight className="w-6 h-6 ml-2" aria-hidden="true" />
-            </Button>
-            <Button variant="outline" size="lg" className="btn-secondary text-lg px-10 py-7 bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20" aria-label="View our portfolio of completed projects">
-              View Our Work
-            </Button>
-          </div>
-          
-          <div className="mt-16 hidden md:grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group hover:scale-110 transition-transform duration-300">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl group-hover:shadow-accent/50 transition-all">
-                  <div className="text-3xl md:text-5xl font-black text-white mb-2 group-hover:text-accent-foreground transition-colors">{stat.number}</div>
-                  <div className="text-sm md:text-base text-white/90 font-medium">{stat.label}</div>
+            <div className="mt-8 flex flex-col xs:flex-row gap-3">
+              <Button asChild className="btn-cta text-base h-12 px-7">
+                <Link to="/contact">
+                  Get a Free Consultation <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="btn-outline-light text-base h-12 px-7">
+                <Link to="/services">Explore Our Services</Link>
+              </Button>
+            </div>
+
+            {/* Quick trust pills */}
+            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
+              {['ISO-aligned processes', 'Local Nairobi team', 'SLA-backed support'].map((t) => (
+                <div key={t} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-accent" aria-hidden="true" />
+                  {t}
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS STRIP */}
+      <section className="bg-background border-b border-border" aria-label="Company stats">
+        <div className="container-page py-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="font-display text-3xl md:text-4xl font-bold text-primary">{s.value}</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-8 bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary" aria-labelledby="trust-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 id="trust-heading" className="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose Brianix Tech Solutions?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-12">
-            3 dedicated experts, years of combined experience, passion for quality, transparent pricing.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card-hover text-center group">
-              <Zap className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-              <h3 className="text-xl font-semibold mb-2">Fast Delivery</h3>
-              <p className="text-muted-foreground">Quick turnaround without compromising quality</p>
-            </div>
-            <div className="card-hover text-center group">
-              <Users className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-              <h3 className="text-xl font-semibold mb-2">Dedicated Team</h3>
-              <p className="text-muted-foreground">Personal attention to every project detail</p>
-            </div>
-            <div className="card-hover text-center group">
-              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-              <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
-              <p className="text-muted-foreground">Track record of successful projects</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-8 bg-background" aria-labelledby="services-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 id="services-heading" className="text-3xl md:text-4xl font-bold mb-4">
-              Our Core Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to establish and grow your digital presence
+      {/* SERVICES OVERVIEW */}
+      <section className="section bg-secondary/40" aria-labelledby="services-heading">
+        <div className="container-page">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="eyebrow">Our Services</span>
+            <h2 id="services-heading" className="heading-lg mt-3">Everything Your Business Needs, Under One Roof</h2>
+            <p className="lead mt-4">
+              Six specialised practice areas — designed to work seamlessly together so you get a complete IT partner, not just a vendor.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="card-hover border-0 group overflow-hidden">
-                <CardContent className="p-8 relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
-                  <div className="relative z-10">
-                    <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">{service.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mr-2" aria-hidden="true" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((s) => (
+              <Link key={s.title} to={s.href} className="card-elevated group block">
+                <div className="feature-icon group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                  <s.icon className="w-6 h-6" aria-hidden="true" />
+                </div>
+                <h3 className="text-lg font-semibold mt-5">{s.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
+                <div className="mt-4 inline-flex items-center text-sm font-medium text-accent group-hover:gap-2 transition-all">
+                  Learn more <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Hear From Our Happy Clients
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Real results from real businesses
+      {/* ABOUT PREVIEW */}
+      <section className="section" aria-labelledby="about-preview-heading">
+        <div className="container-page grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-2xl bg-gradient-primary overflow-hidden shadow-card">
+              <div className="w-full h-full bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--accent)/0.4),_transparent_60%)]" />
+            </div>
+            <div className="absolute -bottom-6 -right-6 hidden md:block bg-card border border-border rounded-2xl p-5 shadow-hover w-56">
+              <div className="flex items-center gap-2 text-cta">
+                <Award className="w-5 h-5" />
+                <span className="text-xs uppercase tracking-wider font-semibold">Certified</span>
+              </div>
+              <p className="text-sm font-medium text-foreground mt-2">Microsoft, Cisco & CompTIA accredited engineers.</p>
+            </div>
+          </div>
+          <div>
+            <span className="eyebrow">About Kasitech</span>
+            <h2 id="about-preview-heading" className="heading-lg mt-3">A Reliable Technology Partner Built for Modern Kenya</h2>
+            <p className="lead mt-4">
+              We blend deep technical expertise with a hands-on, customer-first culture. Whether you are a startup,
+              SME, institution or large enterprise, we tailor solutions that move your organisation forward.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="card-hover border-0 group">
-                <CardContent className="p-8 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current transform group-hover:scale-110 transition-transform duration-200" style={{ transitionDelay: `${i * 50}ms` }} />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                  <div>
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.company}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Developer Discipline & Remote Excellence */}
-      <section className="py-8 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Developer Discipline in a Remote Setting
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Professionalism, accountability, and structured processes—no matter where we work
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="card-hover border-0">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Daily Communication</h3>
-                <p className="text-muted-foreground text-sm">
-                  Regular updates via WhatsApp, email, and Google Meet during working hours (8 AM–4 PM)
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Code Quality Assurance</h3>
-                <p className="text-muted-foreground text-sm">
-                  Code reviews, testing, and optimization ensure enterprise-level quality
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Milestone-Based Delivery</h3>
-                <p className="text-muted-foreground text-sm">
-                  Clear milestones defined at project start with demos at each phase
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Development Process */}
-      <section className="py-8 bg-gradient-to-br from-muted to-background dark:from-secondary dark:to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Development Process
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              From idea to delivery—transparent, structured, and client-centric
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            <Card className="card-hover border-0 text-center">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                  1
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Discovery</h3>
-                <p className="text-sm text-muted-foreground">
-                  We listen to your vision, goals, and requirements
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0 text-center">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                  2
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Planning</h3>
-                <p className="text-sm text-muted-foreground">
-                  Strategy, timeline, and milestones agreed upon
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0 text-center">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                  3
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Development</h3>
-                <p className="text-sm text-muted-foreground">
-                  Weekly progress reports and demos at key milestones
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0 text-center">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                  4
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Review</h3>
-                <p className="text-sm text-muted-foreground">
-                  Client feedback and adjustments before launch
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0 text-center">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                  5
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Delivery</h3>
-                <p className="text-sm text-muted-foreground">
-                  Documentation, training, and feedback form provided
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Why We're Dependable */}
-      <section className="py-8 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why We're Dependable
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Professional processes, transparent communication, and legal compliance
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="card-hover border-0">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Progress Reports</h3>
-                <p className="text-muted-foreground text-sm">
-                  Weekly updates during development so you know exactly what's happening with your project
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">On-Time Delivery</h3>
-                <p className="text-muted-foreground text-sm">
-                  We respect your timeline. Guaranteed delivery when promised, every single time
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Multiple Locations</h3>
-                <p className="text-muted-foreground text-sm">
-                  8 AM – 4 PM, Mon–Fri. Offices in Westlands (Waiyaki Way), Kangundo Road, and Magadi Road
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Post-Project Support</h3>
-                <p className="text-muted-foreground text-sm">
-                  Complete documentation, user guides, and feedback forms to ensure smooth handover
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Dispute Resolution</h3>
-                <p className="text-muted-foreground text-sm">
-                  3-tier professional resolution: proactive care, mediation, and arbitration under Kenya Arbitration Act
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="card-hover border-0">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Legal Compliance</h3>
-                <p className="text-muted-foreground text-sm">
-                  Fully compliant with KRA tax laws, Kenya Data Protection Act (2019), and ICT Authority guidelines
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-8 bg-gradient-to-r from-primary to-accent">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Elevate Your Digital Presence?
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Let's start your project together. Get a free consultation and quote today.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 border-white">
-              Request Quote
-              <ArrowRight className="w-5 h-5 ml-2" />
+            <ul className="mt-6 space-y-3">
+              {[
+                'Vendor-neutral advice — we recommend what is best for you.',
+                'Locally based engineers with rapid on-site response.',
+                'End-to-end ownership: design, deploy, support, optimise.',
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 shrink-0" aria-hidden="true" />
+                  <span className="text-sm md:text-base text-foreground/85">{p}</span>
+                </li>
+              ))}
+            </ul>
+            <Button asChild className="mt-8 bg-primary hover:bg-primary-hover text-primary-foreground h-12 px-6 rounded-xl">
+              <Link to="/about">More About Us <ArrowRight className="w-4 h-4 ml-1" /></Link>
             </Button>
-            <a
-              href="https://wa.me/1234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp text-lg px-8 py-4"
-            >
-              WhatsApp Chat
-            </a>
           </div>
         </div>
       </section>
-      </div>
+
+      {/* WHY CHOOSE US */}
+      <section className="section bg-secondary/40" aria-labelledby="why-heading">
+        <div className="container-page">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="eyebrow">Why Kasitech</span>
+            <h2 id="why-heading" className="heading-lg mt-3">Built on Trust, Driven by Results</h2>
+            <p className="lead mt-4">Four reasons clients across Kenya choose us — and stay with us.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((f) => (
+              <div key={f.title} className="card-elevated text-center">
+                <div className="feature-icon mx-auto">
+                  <f.icon className="w-6 h-6" aria-hidden="true" />
+                </div>
+                <h3 className="text-base font-semibold mt-4">{f.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="section" aria-labelledby="testimonials-heading">
+        <div className="container-page">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <span className="eyebrow">Client Stories</span>
+            <h2 id="testimonials-heading" className="heading-lg mt-3">Trusted by Teams Across Industries</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <article key={t.name} className="card-elevated relative">
+                <Quote className="w-8 h-8 text-accent/30 absolute top-5 right-5" aria-hidden="true" />
+                <div className="flex gap-1" aria-label={`${t.rating} star rating`}>
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-cta text-cta" aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="mt-4 text-sm text-foreground/85 leading-relaxed">"{t.text}"</p>
+                <div className="mt-5 pt-5 border-t border-border">
+                  <div className="font-semibold text-sm">{t.name}</div>
+                  <div className="text-xs text-muted-foreground">{t.company}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA BANNER */}
+      <section className="section pb-24" aria-label="Call to action">
+        <div className="container-page">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-hero p-10 lg:p-16 text-center text-white shadow-hover">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(var(--accent)/0.35),_transparent_55%)]" />
+            <div className="relative max-w-2xl mx-auto">
+              <h2 className="heading-lg text-white">Ready to Transform Your IT?</h2>
+              <p className="lead text-white/85 mt-4">
+                Talk to a Kasitech specialist today and get a tailored proposal — no obligations.
+              </p>
+              <div className="mt-8 flex flex-col xs:flex-row gap-3 justify-center">
+                <Button asChild className="btn-cta h-12 px-7">
+                  <Link to="/contact">Request a Quote <ArrowRight className="w-4 h-4" /></Link>
+                </Button>
+                <Button asChild variant="outline" className="btn-outline-light h-12 px-7">
+                  <Link to="/services">View Services</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
