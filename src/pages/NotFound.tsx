@@ -1,34 +1,31 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { SEO } from "@/components/SEO";
-import { Button } from "@/components/ui/button";
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Home } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { SEO } from '@/components/SEO';
 
 const NotFound = () => {
   const location = useLocation();
-
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    console.error('404 Not Found:', location.pathname);
   }, [location.pathname]);
 
   return (
     <>
-      <SEO 
-        title="404 - Page Not Found | Brianix Tech Solutions"
-        description="The page you are looking for does not exist. Return to Brianix Tech Solutions homepage for web development, SEO, and app development services in Nairobi."
-        keywords="404 error"
+      <SEO
+        title="Page Not Found | Kasitech Solutions"
+        description="The page you are looking for does not exist. Return to Kasitech Solutions home for IT services in Kenya."
       />
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary-light to-background dark:from-background dark:to-secondary">
-        <div className="text-center max-w-2xl mx-auto px-4">
-          <h1 className="mb-4 text-6xl md:text-8xl font-black text-primary">404</h1>
-          <h2 className="mb-4 text-2xl md:text-4xl font-bold text-foreground">Page Not Found</h2>
-          <p className="mb-8 text-lg text-muted-foreground">
-            Oops! The page you're looking for doesn't exist. Let's get you back on track.
-          </p>
-          <Button asChild size="lg" className="btn-hero">
-            <a href="/">Return to Home</a>
+      <section className="min-h-[70vh] flex items-center justify-center">
+        <div className="text-center px-6">
+          <p className="eyebrow">404</p>
+          <h1 className="heading-xl mt-2">We can't find that page</h1>
+          <p className="lead mt-3 max-w-md mx-auto">The page may have moved or no longer exists.</p>
+          <Button asChild className="mt-8 bg-primary hover:bg-primary-hover text-primary-foreground h-12 px-7 rounded-xl">
+            <Link to="/"><Home className="w-4 h-4 mr-1" /> Back to Home</Link>
           </Button>
         </div>
-      </div>
+      </section>
     </>
   );
 };
