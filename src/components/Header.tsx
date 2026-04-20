@@ -1,252 +1,131 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MessageCircle, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
+
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Shop', href: '/shop' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Contact', href: '/contact' },
-  ];
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
-  const isActive = (href: string) => location.pathname === href;
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <header
+      className={cn(
+        'fixed top-0 inset-x-0 z-50 transition-all duration-300',
+        scrolled
+          ? 'bg-background/85 backdrop-blur-md border-b border-border shadow-soft'
+          : 'bg-background/70 backdrop-blur'
+      )}
+    >
+      <div className="container-page">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">BT</span>
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Kasitech Solutions home">
+            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-card group-hover:scale-105 transition-transform">
+              <span className="text-primary-foreground font-display font-bold text-base">K</span>
             </div>
-            <span className="font-bold text-xl text-foreground">Brianix Tech</span>
+            <div className="leading-tight">
+              <div className="font-display font-bold text-lg text-foreground">Kasitech</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Solutions Ltd</div>
+            </div>
           </Link>
 
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center justify-center flex-1">
-            <NavigationMenu>
-              <NavigationMenuList className="space-x-2">
-                <NavigationMenuItem>
-                  <Link
-                    to="/"
-                    className={`text-sm font-medium transition-colors duration-200 px-3 py-2 ${
-                      isActive('/')
-                        ? 'text-primary'
-                        : 'text-muted-foreground hover:text-primary'
-                    }`}
-                  >
-                    Home
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={isActive('/about') ? 'text-primary' : ''}>
-                    About
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="w-[200px] p-2 bg-background/95 backdrop-blur-md border border-border/50 shadow-xl">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/about"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
-                          >
-                            <div className="text-sm font-medium">About Us</div>
-                            <p className="text-xs leading-snug text-muted-foreground">
-                              Our story and team
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/about#african-projects"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
-                          >
-                            <div className="text-sm font-medium">African Projects</div>
-                            <p className="text-xs leading-snug text-muted-foreground">
-                              InternKenya, ProjectTract & more
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={isActive('/services') ? 'text-primary' : ''}>
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="w-[200px] p-2 bg-background/95 backdrop-blur-md border border-border/50 shadow-xl">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/services"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
-                          >
-                            <div className="text-sm font-medium">All Services</div>
-                            <p className="text-xs leading-snug text-muted-foreground">
-                              View our complete offerings
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/services#packages"
-                            className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10 hover:text-foreground focus:bg-accent/10 focus:text-foreground"
-                          >
-                            <div className="text-sm font-medium">Packages</div>
-                            <p className="text-xs leading-snug text-muted-foreground">
-                              Pricing & plans
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link
-                    to="/portfolio"
-                    className={`text-sm font-medium transition-colors duration-200 px-3 py-2 ${
-                      isActive('/portfolio')
-                        ? 'text-primary'
-                        : 'text-muted-foreground hover:text-primary'
-                    }`}
-                  >
-                    Portfolio
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link
-                    to="/contact"
-                    className={`text-sm font-medium transition-colors duration-200 px-3 py-2 ${
-                      isActive('/contact')
-                        ? 'text-primary'
-                        : 'text-muted-foreground hover:text-primary'
-                    }`}
-                  >
-                    Contact
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+          {/* Desktop nav — centered */}
+          <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2" aria-label="Main">
+            {navigation.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.href}
+                end={item.href === '/'}
+                className={({ isActive }) =>
+                  cn(
+                    'px-4 py-2 text-sm font-medium rounded-lg transition-colors',
+                    isActive
+                      ? 'text-accent'
+                      : 'text-foreground/80 hover:text-accent hover:bg-accent/5'
+                  )
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
           </nav>
 
-          {/* Contact Actions - Right Aligned */}
-          <div className="hidden lg:flex items-center space-x-3">
+          {/* Right cluster */}
+          <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+1234567890"
-              className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+              href="tel:+254700000000"
+              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent transition-colors"
+              aria-label="Call Kasitech"
             >
-              <Phone className="w-4 h-4 mr-1" />
-              +1 (234) 567-890
-            </a>
-            <a
-              href="mailto:hello@brianixtech.com"
-              className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Mail className="w-4 h-4 mr-1" />
-              Email
-            </a>
-            <a
-              href="https://wa.me/1234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp"
-            >
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              +254 700 000 000
             </a>
             <ThemeToggle />
+            <Button asChild className="bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl">
+              <Link to="/contact">Get a Quote</Link>
+            </Button>
           </div>
 
-          {/* Mobile menu button and theme toggle */}
-          <div className="flex items-center space-x-2">
-            <div className="lg:hidden">
-              <ThemeToggle />
-            </div>
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </Button>
-            </div>
+          {/* Mobile cluster */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen((v) => !v)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile nav */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden border-t border-border py-4 animate-fade-in">
+            <nav className="flex flex-col gap-1" aria-label="Mobile">
               {navigation.map((item) => (
-                <Link
+                <NavLink
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  end={item.href === '/'}
+                  className={({ isActive }) =>
+                    cn(
+                      'px-4 py-3 rounded-lg text-base font-medium transition-colors',
+                      isActive ? 'text-accent bg-accent/10' : 'text-foreground hover:bg-muted'
+                    )
+                  }
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               ))}
-              <div className="pt-4 border-t border-border">
-                <div className="flex flex-col space-y-2">
-                  <a
-                    href="tel:+1234567890"
-                    className="flex items-center text-sm text-muted-foreground"
-                  >
-                    <Phone className="w-4 h-4 mr-2" />
-                    +1 (234) 567-890
-                  </a>
-                  <a
-                    href="mailto:hello@brianixtech.com"
-                    className="flex items-center text-sm text-muted-foreground"
-                  >
-                    <Mail className="w-4 h-4 mr-2" />
-                    hello@brianixtech.com
-                  </a>
-                  <a
-                    href="https://wa.me/1234567890"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-whatsapp w-fit"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>
+              <Button asChild className="bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl mt-3">
+                <Link to="/contact">Get a Quote</Link>
+              </Button>
+            </nav>
           </div>
         )}
       </div>

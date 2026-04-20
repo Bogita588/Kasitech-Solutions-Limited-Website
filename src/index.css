@@ -2,115 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Brianix Tech Solutions Design System - Premium Corporate Theme
-All colors MUST be HSL.
+/* Kasitech Solutions Limited — Premium Corporate IT Theme
+   All colors MUST be HSL. Brand: Deep Navy + Teal accent + Orange CTA.
 */
 
 @layer base {
   :root {
-    --background: 220 25% 98%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 100%;
+    --foreground: 213 65% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 213 65% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 213 65% 14%;
 
-    /* Premium tech blue palette */
-    --primary: 214 95% 50%;
+    /* Deep navy primary (#0A2540) */
+    --primary: 213 73% 15%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 214 95% 45%;
-    --primary-light: 214 100% 96%;
+    --primary-hover: 213 73% 22%;
+    --primary-light: 213 60% 96%;
 
-    /* Professional secondary colors */
-    --secondary: 210 40% 93%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 213 65% 14%;
 
-    --muted: 210 40% 93%;
-    --muted-foreground: 215 20% 30%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 213 20% 35%;
 
-    /* Vibrant accent for CTAs */
-    --accent: 142 76% 42%;
+    /* Teal accent for tech feel */
+    --accent: 178 70% 38%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 142 76% 36%;
+    --accent-hover: 178 70% 32%;
 
-    /* Status colors */
+    /* Orange CTA */
+    --cta: 22 92% 54%;
+    --cta-foreground: 0 0% 100%;
+    --cta-hover: 22 92% 48%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 85%;
-    --input: 214 32% 90%;
-    --ring: 214 95% 50%;
+    --border: 213 20% 88%;
+    --input: 213 20% 90%;
+    --ring: 213 73% 15%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(142 76% 36%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 17% 98%) 100%);
-    --shadow-card: 0 4px 20px -2px hsl(210 10% 60% / 0.1);
-    --shadow-hover: 0 8px 30px -4px hsl(210 10% 60% / 0.15);
-    --shadow-primary: 0 8px 30px -4px hsl(214 84% 56% / 0.25);
-    
-    /* Typography scale */
-    --font-display: 'Inter', system-ui, sans-serif;
+    /* Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(213 73% 12%) 0%, hsl(213 73% 22%) 60%, hsl(178 70% 30%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(213 73% 15%), hsl(213 73% 28%));
+    --gradient-accent: linear-gradient(135deg, hsl(178 70% 38%), hsl(178 70% 28%));
+    --gradient-cta: linear-gradient(135deg, hsl(22 92% 54%), hsl(14 90% 50%));
+
+    --shadow-soft: 0 4px 16px -4px hsl(213 30% 20% / 0.08);
+    --shadow-card: 0 8px 24px -8px hsl(213 30% 20% / 0.12);
+    --shadow-hover: 0 16px 40px -12px hsl(213 73% 15% / 0.18);
+    --shadow-cta: 0 8px 24px -6px hsl(22 92% 54% / 0.4);
+
+    --font-display: 'Sora', 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
-    
-    /* Animation variables */
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 220 15% 8%;
-    --foreground: 210 20% 96%;
+    --background: 213 40% 7%;
+    --foreground: 210 30% 96%;
 
-    --card: 220 13% 12%;
-    --card-foreground: 210 20% 96%;
+    --card: 213 35% 10%;
+    --card-foreground: 210 30% 96%;
 
-    --popover: 220 13% 12%;
-    --popover-foreground: 210 20% 96%;
+    --popover: 213 35% 10%;
+    --popover-foreground: 210 30% 96%;
 
-    /* Brighter primary blue for dark mode visibility */
-    --primary: 214 84% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 214 84% 65%;
-    --primary-light: 214 84% 15%;
+    --primary: 178 70% 45%;
+    --primary-foreground: 213 73% 8%;
+    --primary-hover: 178 70% 52%;
+    --primary-light: 213 35% 15%;
 
-    --secondary: 217 32% 20%;
-    --secondary-foreground: 210 20% 96%;
+    --secondary: 213 30% 16%;
+    --secondary-foreground: 210 30% 96%;
 
-    --muted: 217 32% 20%;
-    --muted-foreground: 215 16% 70%;
+    --muted: 213 30% 16%;
+    --muted-foreground: 213 15% 70%;
 
-    /* Brighter accent green for dark mode */
-    --accent: 142 76% 42%;
+    --accent: 22 92% 58%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 142 76% 36%;
+    --accent-hover: 22 92% 52%;
 
-    --destructive: 0 84% 65%;
+    --cta: 22 92% 58%;
+    --cta-foreground: 0 0% 100%;
+    --cta-hover: 22 92% 52%;
+
+    --destructive: 0 75% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 32% 22%;
-    --input: 217 32% 22%;
-    --ring: 214 84% 60%;
+    --border: 213 25% 20%;
+    --input: 213 25% 20%;
+    --ring: 178 70% 45%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(213 50% 8%) 0%, hsl(213 45% 14%) 60%, hsl(178 60% 22%) 100%);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -127,147 +128,106 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-body;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
-  /* Unique heading colors for better visual hierarchy */
-  h1 {
-    @apply text-foreground;
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
   }
 
-  h2 {
-    @apply text-primary;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
   }
 
-  h3 {
-    @apply text-accent;
+  h1 { @apply text-foreground font-bold; }
+  h2 { @apply text-foreground font-bold; }
+  h3 { @apply text-foreground font-semibold; }
+  h4 { @apply text-foreground font-semibold; }
+  h5 { @apply text-foreground font-medium; }
+  h6 { @apply text-muted-foreground font-medium uppercase tracking-wider; }
+
+  /* Focus ring for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
 
-  h4 {
-    @apply text-foreground;
-  }
-
-  h5 {
-    @apply text-muted-foreground;
-  }
-
-  h6 {
-    @apply text-primary/80;
+  ::selection {
+    @apply bg-accent/30 text-foreground;
   }
 }
 
 @layer components {
-  /* Hero button variant */
-  .btn-hero {
-    @apply bg-gradient-to-r from-primary to-accent text-white font-semibold px-8 py-4 rounded-xl;
-    @apply shadow-lg hover:shadow-xl hover:from-primary/90 hover:to-accent/90 transform hover:-translate-y-1 hover:scale-105;
-    @apply transition-all duration-300 ease-out relative overflow-hidden;
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .btn-hero::before {
-    @apply content-[''] absolute inset-0 bg-gradient-to-r from-white/20 to-transparent;
-    @apply transform -skew-x-12 -translate-x-full;
-    @apply transition-transform duration-700 ease-out;
+  .section {
+    @apply py-16 md:py-24;
   }
 
-  .btn-hero:hover::before {
-    @apply translate-x-full;
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-accent;
   }
 
-  /* Secondary button variant */
-  .btn-secondary {
-    @apply bg-background text-primary border border-primary font-semibold px-8 py-4 rounded-xl;
-    @apply hover:bg-primary hover:text-white transform hover:-translate-y-1 hover:scale-105;
-    @apply transition-all duration-300 ease-out relative overflow-hidden;
-    @apply dark:bg-background dark:text-primary dark:border-primary dark:hover:bg-primary dark:hover:text-white;
+  .heading-xl {
+    @apply font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight;
   }
 
-  /* Card hover effects */
-  .card-hover {
-    @apply bg-gradient-to-br from-card to-muted border border-border rounded-xl p-5;
-    @apply shadow-md hover:shadow-xl transform hover:-translate-y-1;
-    @apply transition-all duration-300 ease-out relative overflow-hidden;
-    @apply dark:from-card dark:to-secondary dark:border-border;
-  }
-  
-  /* Download PDF button */
-  .btn-download {
-    @apply bg-gradient-to-r from-accent to-primary text-white font-semibold px-6 py-3 rounded-lg;
-    @apply shadow-md hover:shadow-lg transform hover:scale-105;
-    @apply transition-all duration-300 ease-out flex items-center gap-2;
+  .heading-lg {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
   }
 
-  /* Scroll animations */
-  .animate-in {
-    @apply opacity-100 translate-y-0 translate-x-0 scale-100;
+  .heading-md {
+    @apply font-display text-2xl sm:text-3xl font-bold tracking-tight;
   }
 
-  /* Text animations */
-  .fade-in {
-    animation: fadeInUp 0.6s ease-out;
+  .lead {
+    @apply text-base sm:text-lg text-muted-foreground leading-relaxed;
   }
 
-  .slide-in-left {
-    animation: slideInLeft 0.8s ease-out;
+  /* CTA orange button */
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-2 bg-[hsl(var(--cta))] text-[hsl(var(--cta-foreground))]
+           hover:bg-[hsl(var(--cta-hover))] font-semibold px-6 py-3 rounded-xl
+           shadow-[var(--shadow-cta)] hover:-translate-y-0.5 transition-all duration-300;
   }
 
-  .slide-in-right {
-    animation: slideInRight 0.8s ease-out;
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white/40 text-white
+           hover:bg-white hover:text-primary font-semibold px-6 py-3 rounded-xl
+           transition-all duration-300;
   }
 
-  /* WhatsApp button */
+  .card-elevated {
+    @apply bg-card border border-border/60 rounded-2xl p-6 shadow-[var(--shadow-soft)]
+           hover:shadow-[var(--shadow-hover)] hover:-translate-y-1 hover:border-accent/40
+           transition-all duration-300;
+  }
+
+  .feature-icon {
+    @apply w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center;
+  }
+
   .btn-whatsapp {
-    @apply bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-6 py-3 rounded-full;
-    @apply flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105;
-    @apply transition-all duration-300 ease-out relative overflow-hidden;
+    @apply inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1FB855] text-white font-semibold
+           px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300;
   }
 
-  .btn-whatsapp::before {
-    @apply content-[''] absolute inset-0 bg-white/20;
-    @apply transform scale-x-0 origin-left;
-    @apply transition-transform duration-300 ease-out;
-  }
-
-  .btn-whatsapp:hover::before {
-    @apply scale-x-100;
+  /* WhatsApp floating */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1FB855]
+           text-white flex items-center justify-center shadow-2xl hover:scale-110
+           transition-all duration-300;
   }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease-out both;
 }
