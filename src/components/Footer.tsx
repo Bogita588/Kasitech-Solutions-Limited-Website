@@ -20,13 +20,13 @@ const Footer = () => {
               A reliable, modern and innovative IT partner for businesses, institutions and individuals across Kenya.
             </p>
             <div className="flex items-center gap-3 justify-center sm:justify-start">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors text-white">
+              <a href="https://www.linkedin.com/company/kasitech-solutions-limited/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors text-white">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors text-white">
+              {/* <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors text-white">
                 <Twitter className="w-4 h-4" />
-              </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors text-white">
+              </a> */}
+              <a href="https://www.facebook.com/profile.php?id=61576251848442" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors text-white">
                 <Facebook className="w-4 h-4" />
               </a>
             </div>
