@@ -12,9 +12,9 @@ const values = [
 ];
 
 const team = [
-  { name: 'James Kasi', role: 'Founder & CEO', initials: 'JK' },
+  { name: 'Samuel Maina', role: 'CEO', initials: 'SM' },
+  { name: 'Bogita Brian', role: 'Developer', initials: 'BB' },
   { name: 'Mercy Wambui', role: 'Head of Cybersecurity', initials: 'MW' },
-  { name: 'Brian Otieno', role: 'Lead Engineer', initials: 'BO' },
   { name: 'Faith Njeri', role: 'Client Success Lead', initials: 'FN' },
 ];
 
@@ -41,8 +41,8 @@ const About = () => (
     </section>
 
     {/* Story */}
-    <section className="section">
-      <div className="container-page grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="section py-12">
+      <div className="container-page grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
         <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-card">
           <img
             src={storyImage}
@@ -63,28 +63,41 @@ const About = () => (
               networking, training and IT equipment under one trusted brand — saving our clients
               time, complexity and cost.
             </p>
+            <p>
+              Over the years we have grown by staying close to client challenges and delivering
+              solutions that are robust, secure and easy to manage. From small businesses to
+              institutions, our work is rooted in practical outcomes and long-term value.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     {/* Mission / Vision */}
-    <section className="section bg-secondary/40">
+    <section className="section py-12 bg-secondary/40">
       <div className="container-page grid md:grid-cols-2 gap-6">
         <div className="card-elevated">
           <div className="feature-icon"><Target className="w-6 h-6" aria-hidden="true" /></div>
-          <h3 className="text-xl font-semibold mt-5">Our Mission</h3>
+          <h3 className="text-xl font-semibold mt-5 text-primary">Our Mission</h3>
           <p className="text-muted-foreground mt-3">
             To empower organisations across Kenya with secure, scalable and affordable IT solutions
             that accelerate growth and improve everyday operations.
           </p>
+          <p className="text-muted-foreground mt-3">
+            We build technology that helps teams work smarter, protects critical assets, and
+            keeps systems reliable so businesses can focus on growth instead of troubleshooting.
+          </p>
         </div>
         <div className="card-elevated">
           <div className="feature-icon"><Eye className="w-6 h-6" aria-hidden="true" /></div>
-          <h3 className="text-xl font-semibold mt-5">Our Vision</h3>
+          <h3 className="text-xl font-semibold mt-5 text-primary">Our Vision</h3>
           <p className="text-muted-foreground mt-3">
             To be East Africa's most trusted one-stop IT partner — recognised for technical
             excellence, integrity and lasting client relationships.
+          </p>
+          <p className="text-muted-foreground mt-3">
+            We aim to create a future where technology empowers every organisation to scale
+            confidently, operate securely, and achieve its goals with less friction.
           </p>
         </div>
       </div>
@@ -101,7 +114,7 @@ const About = () => (
           {values.map((v) => (
             <div key={v.title} className="card-elevated text-center">
               <div className="feature-icon mx-auto"><v.icon className="w-6 h-6" aria-hidden="true" /></div>
-              <h3 className="text-base font-semibold mt-4">{v.title}</h3>
+              <h3 className="text-base font-semibold mt-4 text-primary">{v.title}</h3>
               <p className="text-sm text-muted-foreground mt-2">{v.desc}</p>
             </div>
           ))}

@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from './ThemeToggle';
+import { QuoteFormDialog } from '@/components/QuoteFormDialog';
 import { cn } from '@/lib/utils';
 
 const navigation = [
@@ -13,6 +14,8 @@ const navigation = [
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
+
+const logoUrl = new URL('../assets/kasitech-logo.webp', import.meta.url).href;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,20 +37,16 @@ const Header = () => {
       className={cn(
         'fixed top-0 inset-x-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-background/85 backdrop-blur-md border-b border-border shadow-soft'
-          : 'bg-background/70 backdrop-blur'
+          ? 'bg-background border-b border-border shadow-soft'
+          : 'bg-background'
       )}
     >
       <div className="container-page">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group" aria-label="Kasitech Solutions home">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-card group-hover:scale-105 transition-transform">
-              <span className="text-primary-foreground font-display font-bold text-base">K</span>
-            </div>
-            <div className="leading-tight">
-              <div className="font-display font-bold text-lg text-foreground">Kasitech</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Solutions Ltd</div>
+          <Link to="/" className="flex items-center group" aria-label="Kasitech Solutions home">
+            <div className="w-28 h-14 rounded-[1.25rem] overflow-hidden bg-transparent flex items-center justify-center shadow-card group-hover:scale-105 transition-transform">
+              <img src={logoUrl} alt="Kasitech logo" className="w-full h-full object-contain" />
             </div>
           </Link>
 
@@ -83,9 +82,14 @@ const Header = () => {
               +254 723 799 450
             </a>
             <ThemeToggle />
-            <Button asChild className="bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl">
-              <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer">Get a Quote</a>
-            </Button>
+            <QuoteFormDialog
+              defaultService="General IT Quote"
+              trigger={
+                <Button className="bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl">
+                  Get a Quote
+                </Button>
+              }
+            />
           </div>
 
           {/* Mobile cluster */}

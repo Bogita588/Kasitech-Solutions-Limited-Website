@@ -1,13 +1,21 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Shield, Code2, Network, GraduationCap, Cpu, Lightbulb,
-  CheckCircle2, Star, Users, Clock, Award, Quote
+  Rocket, CheckCircle2, Star, Users, Clock, Award, Quote
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { QuoteFormDialog } from '@/components/QuoteFormDialog';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import { SEO } from '@/components/SEO';
 import aboutImage from '@/assets/kasitech-hero.webp';
 
-const heroSideImage = 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80';
+const heroSideImages = [
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80',
+  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+];
 
 const faqItems = [
   {
@@ -110,9 +118,13 @@ const Index = () => {
                 Kasitech delivers reliable, modern technology that helps your organisation grow.
               </p>
               <div className="mt-8 flex flex-col xs:flex-row gap-3">
-                <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer" className="btn-cta text-base h-12 px-7 inline-flex items-center">
-                  Get a Free Consultation <ArrowRight className="w-4 h-4" />
-                </a>
+                <QuoteFormDialog
+                  trigger={
+                    <Button className="btn-cta text-base h-12 px-7 inline-flex items-center">
+                      Get a Free Consultation <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  }
+                />
                 <Button asChild variant="outline" className="btn-outline-light text-base h-12 px-7">
                   <a href="mailto:info@kasitech.co.ke">Email Us</a>
                 </Button>
@@ -129,13 +141,32 @@ const Index = () => {
             </div>
 
             <div className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
-              <img
-                src={heroSideImage}
-                alt="Professionals collaborating in a modern office"
-                width={920}
-                height={620}
-                className="w-full h-full object-cover"
-              />
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 4000,
+                  }),
+                ]}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {heroSideImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <img
+                        src={image}
+                        alt={`Hero image ${index + 1}`}
+                        width={920}
+                        height={620}
+                        className="w-full h-full object-cover"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent" />
             </div>
           </div>
@@ -152,6 +183,68 @@ const Index = () => {
                 <div className="text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE KASITECH */}
+      <section className="section" aria-labelledby="why-pomalo-heading">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-center">
+            <div className="max-w-2xl">
+              <span className="eyebrow">Why Choose Kasitech</span>
+              <h2 id="why-pomalo-heading" className="heading-lg mt-3">More Than Products — We Build Solutions</h2>
+              <p className="lead mt-4 max-w-2xl">
+                Every system we create is engineered with intent: to help you launch faster, scale smarter, and avoid unnecessary complexity.
+              </p>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                    <Lightbulb className="w-5 h-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Product-First Thinking</h3>
+                  <p className="mt-2 text-sm text-foreground/80">
+                    We design with real-world use cases, not just features.
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                    <Code2 className="w-5 h-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Developer-Friendly Architecture</h3>
+                  <p className="mt-2 text-sm text-foreground/80">
+                    Clean, scalable, and easy to customize or extend.
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                    <Rocket className="w-5 h-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Built to Launch Fast</h3>
+                  <p className="mt-2 text-sm text-foreground/80">
+                    Go from idea to live product in record time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-6">
+              <div className="aspect-[4/3] overflow-hidden rounded-[2rem] shadow-card">
+                <img
+                  src={aboutImage}
+                  alt="Team working on IT systems"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[16/9] overflow-hidden rounded-[2rem] shadow-card">
+                <img
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80"
+                  alt="Modern IT workspace"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -173,7 +266,7 @@ const Index = () => {
                 <div className="feature-icon group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                   <s.icon className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold mt-5">{s.title}</h3>
+                <h3 className="text-lg font-semibold mt-5 text-primary">{s.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{s.desc}</p>
                 <div className="mt-4 inline-flex items-center text-sm font-medium text-accent group-hover:gap-2 transition-all">
                   Learn more <ArrowRight className="w-4 h-4 ml-1" aria-hidden="true" />
@@ -244,7 +337,7 @@ const Index = () => {
                 <div className="feature-icon mx-auto">
                   <f.icon className="w-6 h-6" aria-hidden="true" />
                 </div>
-                <h3 className="text-base font-semibold mt-4">{f.title}</h3>
+                <h3 className="text-base font-semibold mt-4 text-primary">{f.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{f.desc}</p>
               </div>
             ))}
@@ -309,9 +402,13 @@ const Index = () => {
                 Talk to a Kasitech specialist today and get a tailored proposal — no obligations.
               </p>
               <div className="mt-8 flex flex-col xs:flex-row gap-3 justify-center">
-                <a href="https://wa.me/254723799450" target="_blank" rel="noopener noreferrer" className="btn-cta h-12 px-7 inline-flex items-center">
-                  Request a Quote <ArrowRight className="w-4 h-4" />
-                </a>
+                <QuoteFormDialog
+                  trigger={
+                    <Button className="btn-cta h-12 px-7 inline-flex items-center">
+                      Request a Quote <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  }
+                />
                 <Button asChild variant="outline" className="btn-outline-light h-12 px-7">
                   <a href="mailto:info@kasitech.co.ke">Email Us</a>
                 </Button>

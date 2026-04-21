@@ -4,6 +4,7 @@ import {
   CheckCircle2, ArrowRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { QuoteFormDialog } from '@/components/QuoteFormDialog';
 import { SEO } from '@/components/SEO';
 import consultingImage from '@/assets/hero-bg.webp';
 import cybersecurityImage from '@/assets/product-server.webp';
@@ -127,7 +128,7 @@ const Services = () => (
       <div className="container-page">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((s) => (
-            <article key={s.id} className="overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition hover:-translate-y-1 hover:shadow-hover">
+            <article id={s.id} key={s.id} className="overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition hover:-translate-y-1 hover:shadow-hover">
               <div className="relative h-56 overflow-hidden">
                 <img
                   src={s.image}
@@ -151,9 +152,14 @@ const Services = () => (
                   ))}
                 </ul>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Button asChild className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-xl h-11 px-6">
-                    <Link to="/contact">Request a Quote</Link>
-                  </Button>
+                  <QuoteFormDialog
+                    defaultService={s.title}
+                    trigger={
+                      <Button className="bg-primary hover:bg-primary-hover text-primary-foreground rounded-xl h-11 px-6">
+                        Request a Quote
+                      </Button>
+                    }
+                  />
                   {s.cta && (
                     <Button asChild variant="outline" className="rounded-xl h-11 px-6">
                       <Link to={s.cta.href}>
@@ -177,9 +183,14 @@ const Services = () => (
           <p className="lead text-primary-foreground/80 mt-4 max-w-xl mx-auto">
             Book a free 30-minute consultation. We'll review your needs and recommend the best fit.
           </p>
-          <Button asChild className="btn-cta mt-8 h-12 px-7">
-            <Link to="/contact">Book Free Consultation <ArrowRight className="w-4 h-4" /></Link>
-          </Button>
+          <QuoteFormDialog
+            defaultService="General IT Consultation"
+            trigger={
+              <Button className="btn-cta mt-8 h-12 px-7">
+                Book Free Consultation <ArrowRight className="w-4 h-4" />
+              </Button>
+            }
+          />
         </div>
       </div>
     </section>
