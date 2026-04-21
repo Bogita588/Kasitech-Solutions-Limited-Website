@@ -4,6 +4,7 @@ import {
   Rocket, CheckCircle2, Star, Users, Clock, Award, Quote
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import CountUp from 'react-countup';
 import { QuoteFormDialog } from '@/components/QuoteFormDialog';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -59,10 +60,10 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: '200+', label: 'Projects Delivered' },
-  { value: '120+', label: 'Happy Clients' },
+  { value: '50+', label: 'Projects Delivered' },
+  { value: '50+', label: 'Happy Clients' },
   { value: '15+', label: 'Industries Served' },
-  { value: '24/7', label: 'Expert Support' },
+  { value: '24/7', label: 'Hours Support' },
 ];
 
 const Index = () => {
@@ -178,21 +179,29 @@ const Index = () => {
         <div className="container-page py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-primary">{s.value}</div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-wider">{s.label}</div>
-              </div>
-            ))}
+  <div key={s.label} className="text-center">
+    <div className="font-display text-3xl md:text-4xl font-bold text-primary">
+      <CountUp
+        end={typeof s.value === 'number' ? s.value : parseInt(s.value)}
+        duration={2.5}
+        suffix={s.label.includes(' Support') ? '' : '+'}
+      />
+    </div>
+    <div className="text-xs md:text-sm text-muted-foreground mt-1 uppercase tracking-wider">
+      {s.label}
+    </div>
+  </div>
+))}
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE KASITECH */}
+      {/* WHY CHOOSE POMALO */}
       <section className="section" aria-labelledby="why-pomalo-heading">
         <div className="container-page">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-center">
             <div className="max-w-2xl">
-              <span className="eyebrow">Why Choose Kasitech</span>
+              <span className="eyebrow">Why Choose Pomalo</span>
               <h2 id="why-pomalo-heading" className="heading-lg mt-3">More Than Products — We Build Solutions</h2>
               <p className="lead mt-4 max-w-2xl">
                 Every system we create is engineered with intent: to help you launch faster, scale smarter, and avoid unnecessary complexity.
