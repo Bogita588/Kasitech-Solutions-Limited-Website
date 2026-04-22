@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { ShoppingCart, Star, Check } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ShoppingCart, Star, Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
 import { useToast } from '@/hooks/use-toast';
+import { sanityClient, urlFor, type SanityProduct } from '@/lib/sanity';
 import laptop from '@/assets/product-laptop.jpg';
 import router from '@/assets/product-router.jpg';
 import cctv from '@/assets/product-cctv.jpg';
@@ -10,29 +11,67 @@ import printer from '@/assets/product-printer.jpg';
 import server from '@/assets/product-server.jpg';
 import ups from '@/assets/product-ups.jpg';
 
-const allProducts = [
-  { id: 1, name: 'Dell Latitude Business Laptop', category: 'Laptops', price: 'KSh 95,000', desc: 'Intel i7, 16GB RAM, 512GB SSD — built for productivity.', image: laptop },
-  { id: 2, name: 'Cisco Catalyst 24-Port Switch', category: 'Networking', price: 'KSh 78,000', desc: 'Gigabit managed switch ideal for SMB networks.', image: router },
-  { id: 3, name: 'HP LaserJet Enterprise Printer', category: 'Printers', price: 'KSh 65,000', desc: 'Fast, reliable monochrome laser printer for offices.', image: printer },
-  { id: 4, name: 'IP Bullet CCTV Camera (4MP)', category: 'CCTV', price: 'KSh 12,500', desc: 'Outdoor IP67 camera with night vision and motion detection.', image: cctv },
-  { id: 5, name: 'Dell PowerEdge Rack Server', category: 'Servers', price: 'KSh 320,000', desc: 'Enterprise rack server with redundant power and storage.', image: server },
-  { id: 6, name: 'APC Smart-UPS 1500VA', category: 'Power', price: 'KSh 38,000', desc: 'Line-interactive UPS protecting servers and workstations.', image: ups },
-];
+const fallbackByCategory: Record<string, string> = {
+  Laptops: laptop,
+  Networking: router,
+  Printers: printer,
+  CCTV: cctv,
+  Servers: server,
+  Power: ups,
+};
 
 const categories = ['All', 'Laptops', 'Networking', 'Printers', 'CCTV', 'Servers', 'Power'];
 
+const formatKES = (n: number) =>
+  `KSh ${new Intl.NumberFormat('en-KE').format(n)}`;
+
 const Shop = () => {
   const [active, setActive] = useState('All');
+  const [products, setProducts] = useState<SanityProduct[]>([]);
+  const [loading, setLoading] = useState(true);
   const { toast } = useToast();
-  const products = active === 'All' ? allProducts : allProducts.filter((p) => p.category === active);
+
+  useEffect(() => {
+    const query = `*[_type == "product"] | order(_createdAt desc){
+      _id, title, category, description, price, rating, slug, image
+    }`;
+    sanityClient
+      .fetch<SanityProduct[]>(query)
+      .then((data) => setProducts(data || []))
+      .catch((err) => {
+        console.error('Sanity fetch error:', err);
+        toast({
+          title: 'Could not load products',
+          description: 'Please try again shortly.',
+          variant: 'destructive',
+        });
+      })
+      .finally(() => setLoading(false));
+  }, [toast]);
+
+  const filtered =
+    active === 'All' ? products : products.filter((p) => p.category === active);
 
   const orderViaWhatsApp = (name: string) => {
-    const message = encodeURIComponent(`Hello Kasitech, I would like to place an order for the following product: ${name}. Please share pricing and availability.`);
+    const message = encodeURIComponent(
+      `Hello Kasitech, I would like to place an order for the following product: ${name}. Please share pricing and availability.`,
+    );
     window.open(`https://wa.me/254723799450?text=${message}`, '_blank', 'noopener,noreferrer');
     toast({
       title: 'WhatsApp order started',
       description: `Opening WhatsApp to order ${name}.`,
     });
+  };
+
+  const resolveImage = (p: SanityProduct) => {
+    if (p.image) {
+      try {
+        return urlFor(p.image).width(800).height(600).fit('crop').auto('format').url();
+      } catch {
+        // fall through
+      }
+    }
+    return fallbackByCategory[p.category] ?? laptop;
   };
 
   return (
@@ -76,42 +115,67 @@ const Shop = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
-              <article key={p.id} className="card-elevated p-0 overflow-hidden flex flex-col">
-                <div className="aspect-[4/3] bg-secondary overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={`${p.name} — ${p.category}`}
-                    title={p.name}
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    className="w-full h-full object-contain p-6 hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs uppercase tracking-wider text-accent font-semibold">{p.category}</span>
-                  <h3 className="text-lg font-semibold mt-2">{p.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-2 flex-1">{p.desc}</p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="font-display text-xl font-bold text-primary">{p.price}</span>
-                    <div className="flex items-center gap-1 text-cta">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-cta" aria-hidden="true" />)}
-                    </div>
-                  </div>
-                  <Button
-                    onClick={() => orderViaWhatsApp(p.name)}
-                    className="mt-5 w-full bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl"
-                    aria-label={`Order ${p.name} via WhatsApp`}
+          {loading ? (
+            <div className="flex items-center justify-center py-20 text-muted-foreground">
+              <Loader2 className="w-6 h-6 mr-2 animate-spin" />
+              Loading products…
+            </div>
+          ) : filtered.length === 0 ? (
+            <div className="text-center py-20 text-muted-foreground">
+              No products found in this category yet.
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((p) => {
+                const rating = Math.max(1, Math.min(5, p.rating ?? 5));
+                return (
+                  <article
+                    key={p._id}
+                    className="card-elevated p-0 overflow-hidden flex flex-col"
                   >
-                    <ShoppingCart className="w-4 h-4 mr-1" />
-                    Order via WhatsApp
-                  </Button>
-                </div>
-              </article>
-            ))}
-          </div>
+                    <div className="aspect-[4/3] bg-secondary overflow-hidden">
+                      <img
+                        src={resolveImage(p)}
+                        alt={`${p.title} — ${p.category}`}
+                        title={p.title}
+                        width={800}
+                        height={600}
+                        loading="lazy"
+                        className="w-full h-full object-contain p-6 hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <span className="text-xs uppercase tracking-wider text-accent font-semibold">
+                        {p.category}
+                      </span>
+                      <h3 className="text-lg font-semibold mt-2">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-2 flex-1">
+                        {p.description}
+                      </p>
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="font-display text-xl font-bold text-primary">
+                          {formatKES(p.price)}
+                        </span>
+                        <div className="flex items-center gap-1 text-cta" aria-label={`Rated ${rating} out of 5`}>
+                          {[...Array(rating)].map((_, i) => (
+                            <Star key={i} className="w-3.5 h-3.5 fill-cta" aria-hidden="true" />
+                          ))}
+                        </div>
+                      </div>
+                      <Button
+                        onClick={() => orderViaWhatsApp(p.title)}
+                        className="mt-5 w-full bg-cta hover:bg-cta-hover text-cta-foreground rounded-xl"
+                        aria-label={`Order ${p.title} via WhatsApp`}
+                      >
+                        <ShoppingCart className="w-4 h-4 mr-1" />
+                        Order via WhatsApp
+                      </Button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
