@@ -20,23 +20,38 @@ const heroSideImages = [
 
 const faqItems = [
   {
-    question: 'How quickly can Kasitech respond to on-site support requests in Nairobi?',
-    answer: 'Our Nairobi-based team aims to reach your site within hours for urgent IT incidents, and we offer remote support for less critical issues the same day.'
+    question: 'How long does it take to build a professional business website?',
+    answer: 'Most standard business websites take 1–3 weeks depending on features, content readiness, and design complexity. Larger platforms like e-commerce or dashboards may take longer.'
   },
   {
-    question: 'Can Kasitech help my business move to the cloud without disrupting operations?',
-    answer: 'Yes. We design step-by-step migration plans with pilot validation, secure data transfer and support so systems stay available throughout the move.'
+    question: 'Do you build SEO-optimized websites that rank on Google?',
+    answer: 'Yes. All our websites are built with SEO best practices including fast loading speed, clean code structure, mobile responsiveness, and proper metadata setup.'
   },
   {
-    question: 'Do you provide training for our staff after implementing a new solution?',
-    answer: 'Absolutely. We offer hands-on user training, technical workshops and certification coaching to help your team adopt new systems confidently.'
+    question: 'Can you redesign my existing website to look more modern and professional?',
+    answer: 'Absolutely. We specialize in website redesigns that improve UI/UX, mobile responsiveness, performance, and conversion rates while maintaining your brand identity.'
   },
   {
-    question: 'What types of IT equipment can Kasitech supply and install?',
-    answer: 'We source laptops, desktops, servers, networking gear, CCTV systems, UPS and printers from trusted brands to match your performance and budget goals.'
+    question: 'Do you offer e-commerce website development with payment integration?',
+    answer: 'Yes. We build fully functional online stores with secure payment gateways, product management systems, cart functionality, and order tracking.'
   },
+  {
+    question: 'Will my website work well on mobile phones and tablets?',
+    answer: 'Yes. Every website we build is fully responsive and tested across mobile, tablet, and desktop devices for a smooth user experience.'
+  },
+  {
+    question: 'Can you integrate WhatsApp, email, or CRM systems into my website?',
+    answer: 'Yes. We integrate WhatsApp chat, email automation, booking systems, and CRM tools to help you capture and manage leads effectively.'
+  },
+  {
+    question: 'Do you provide website hosting and maintenance after development?',
+    answer: 'Yes. We offer hosting setup, regular updates, security monitoring, backups, and ongoing maintenance to keep your website running smoothly.'
+  },
+  {
+    question: 'Can I manage and update my website content after it is built?',
+    answer: 'Yes. We can build your site with user-friendly CMS solutions like Sanity or WordPress so you can easily update content without coding.'
+  }
 ];
-
 const services = [
   { icon: Lightbulb, title: 'IT Consulting', desc: 'Strategy and advisory to align technology with your business goals.', href: '/services#consulting' },
   { icon: Shield, title: 'Cybersecurity', desc: 'Protect your data and infrastructure from evolving cyber threats.', href: '/services#cybersecurity' },
@@ -94,7 +109,26 @@ const Index = () => {
       <SEO
         title="Kasitech Solutions Limited — One-Stop IT Services in Kenya"
         description="Reliable IT consulting, cybersecurity, web & app development, networking, training and IT equipment supply across Kenya. Partner with Kasitech today."
-        keywords="IT company Kenya, IT consulting Nairobi, cybersecurity Kenya, web development Kenya, networking Nairobi, IT training, IT equipment supply Kenya"
+        keywords="
+IT company Kenya, IT services Nairobi, IT solutions Kenya, 
+web development Kenya, website development Nairobi, 
+custom software development Kenya, systems development Kenya, 
+hospital management system Kenya, school management system Kenya, 
+education software Kenya, healthcare IT solutions Kenya, 
+e-commerce website development Kenya, online store development Kenya, 
+business website design Kenya, portfolio website design Kenya, 
+mobile app development Kenya, Android app development Kenya, 
+iOS app development Kenya, UI UX design Kenya, 
+cybersecurity services Kenya, penetration testing Kenya, 
+network installation Nairobi, IT infrastructure Kenya, 
+cloud computing Kenya, cloud migration services Kenya, 
+IT consulting Nairobi, digital transformation Kenya, 
+IT support services Kenya, managed IT services Kenya, 
+CCTV installation Kenya, biometric systems Kenya, 
+POS system development Kenya, ERP systems Kenya, 
+software company Kenya, tech company Nairobi, 
+website design company Kenya, IT equipment supply Kenya, 
+laptops and servers Kenya, office IT setup Kenya"
         structuredData={structuredData}
       />
 
@@ -196,12 +230,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHY CHOOSE POMALO */}
+      {/* WHY CHOOOSE KASITECH */}
       <section className="section" aria-labelledby="why-pomalo-heading">
         <div className="container-page">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-center">
             <div className="max-w-2xl">
-              <span className="eyebrow">Why Choose Pomalo</span>
+              <span className="eyebrow">Why Choose Kasitech</span>
               <h2 id="why-pomalo-heading" className="heading-lg mt-3">More Than Products — We Build Solutions</h2>
               <p className="lead mt-4 max-w-2xl">
                 Every system we create is engineered with intent: to help you launch faster, scale smarter, and avoid unnecessary complexity.
@@ -233,6 +267,15 @@ const Index = () => {
                   <h3 className="mt-4 text-lg font-semibold text-primary">Built to Launch Fast</h3>
                   <p className="mt-2 text-sm text-foreground/80">
                     Go from idea to live product in record time.
+                  </p>
+                </div>
+                <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                    <Rocket className="w-5 h-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Performance-Driven Engineering</h3>
+                  <p className="mt-2 text-sm text-foreground/80">
+                    We optimize every experience for speed, responsiveness, and real-world performance—ensuring users stay engaged and search engines rank you higher.
                   </p>
                 </div>
               </div>
