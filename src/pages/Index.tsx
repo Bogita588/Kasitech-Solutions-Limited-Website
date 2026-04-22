@@ -10,13 +10,11 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import Autoplay from 'embla-carousel-autoplay';
 import { SEO } from '@/components/SEO';
 import aboutImage from '@/assets/kasitech-hero.webp';
+import image1 from '../assets/image1.webp'
+import image2 from '../assets/image2.webp'
+import image3 from '../assets/image3.webp'
 
-const heroSideImages = [
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-];
+const heroSideImages = [image1, image2, image3]
 
 const faqItems = [
   {
