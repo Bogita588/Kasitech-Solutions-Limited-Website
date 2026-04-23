@@ -12,7 +12,7 @@ const values = [
 ];
 
 const team = [
-  { name: 'Samuel Maina', role: 'CEO', initials: 'SM' },
+  { name: 'Samuel Kamau', role: 'CEO', initials: 'SM' },
   { name: 'Bogita Brian', role: 'Developer', initials: 'BB' },
   { name: 'Mercy Wambui', role: 'Head of Cybersecurity', initials: 'MW' },
   { name: 'Faith Njeri', role: 'Client Success Lead', initials: 'FN' },
