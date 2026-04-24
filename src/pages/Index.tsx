@@ -38,16 +38,8 @@ const faqItems = [
     answer: 'Reliable computer repair services in Nairobi are offered by IT companies specializing in laptop repair, desktop repair, and hardware troubleshooting. The best computer repair technicians in Kenya provide quick diagnostics, affordable pricing, and genuine spare parts.'
   },
   {
-    question: 'Can you integrate WhatsApp, email, or CRM systems into my website?',
-    answer: 'Yes. We integrate WhatsApp chat, email automation, booking systems, and CRM tools to help you capture and manage leads effectively.'
-  },
-  {
-    question: 'Do you provide website hosting and maintenance after development?',
-    answer: 'Yes. We offer hosting setup, regular updates, security monitoring, backups, and ongoing maintenance to keep your website running smoothly.'
-  },
-  {
-    question: 'Can I manage and update my website content after it is built?',
-    answer: 'Yes. We can build your site with user-friendly CMS solutions like Sanity or WordPress so you can easily update content without coding.'
+    question: 'What is the best software development company in Kenya?',
+    answer: 'The best software development company in Kenya builds scalable, secure, and user-friendly applications. Kasitech Solutions specializes in web applications, mobile apps, and custom software tailored to business needs. We use modern technologies to deliver high-quality solutions.'
   }
 ];
 const services = [
