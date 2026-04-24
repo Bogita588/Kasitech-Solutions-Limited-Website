@@ -22,20 +22,20 @@ const faqItems = [
     answer: 'The best IT support services in Nairobi Kenya include network setup, computer repair, cybersecurity, and managed IT services for businesses. A reliable IT company in Kenya should offer fast response, affordable pricing, and support for both small businesses and large organizations.'
   },
   {
-    question: 'Do you build SEO-optimized websites that rank on Google?',
-    answer: 'Yes. All our websites are built with SEO best practices including fast loading speed, clean code structure, mobile responsiveness, and proper metadata setup.'
+    question: 'How much does IT support cost in Kenya?',
+    answer: 'IT support services in Kenya typically cost between KSh 2,000 to KSh 20,000 per month depending on the size of the business and services offered. Affordable IT support in Nairobi is available for small businesses needing computer repair,software development, network maintenance, and cybersecurity services.'
   },
   {
-    question: 'Can you redesign my existing website to look more modern and professional?',
-    answer: 'Absolutely. We specialize in website redesigns that improve UI/UX, mobile responsiveness, performance, and conversion rates while maintaining your brand identity.'
+    question: 'Which is the best web design company in Kenya?',
+    answer: 'The best web design company in Kenya offers professional website development, SEO optimization, and mobile-friendly designs for businesses. A top web design company in Nairobi should also provide fast hosting, domain registration, and digital marketing services..'
   },
   {
-    question: 'Do you offer e-commerce website development with payment integration?',
-    answer: 'Yes. We build fully functional online stores with secure payment gateways, product management systems, cart functionality, and order tracking.'
+    question: 'How much does CCTV installation cost in Nairobi Kenya?',
+    answer: 'CCTV installation cost in Nairobi Kenya ranges from KSh 15,000 to KSh 100,000 depending on the number of cameras and system type. Professional CCTV installation services in Kenya include setup, maintenance, and remote monitoring for homes and businesses.'
   },
   {
-    question: 'Will my website work well on mobile phones and tablets?',
-    answer: 'Yes. Every website we build is fully responsive and tested across mobile, tablet, and desktop devices for a smooth user experience.'
+    question: 'Where can I get reliable computer repair services in Nairobi?',
+    answer: 'Reliable computer repair services in Nairobi are offered by IT companies specializing in laptop repair, desktop repair, and hardware troubleshooting. The best computer repair technicians in Kenya provide quick diagnostics, affordable pricing, and genuine spare parts.'
   },
   {
     question: 'Can you integrate WhatsApp, email, or CRM systems into my website?',
