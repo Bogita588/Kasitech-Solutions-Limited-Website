@@ -9,7 +9,7 @@ const posts = [
   {
     slug: 'cybersecurity-essentials-for-kenyan-smes',
     title: 'Cybersecurity Essentials Every Kenyan SME Should Implement Today',
-    excerpt: 'Five practical, low-cost steps that immediately reduce your risk of breaches, ransomware and data loss.',
+    excerpt: 'Five practical, low-cost steps that immediately reduce your risk of breaches, ransomware  & data loss.',
     image: cybersecurity,
     category: 'Cybersecurity',
     date: 'April 12, 2026',
