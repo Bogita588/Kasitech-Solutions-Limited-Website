@@ -1,5 +1,5 @@
 import { Mail } from 'lucide-react';
-import whatsappIcon from '../assets/whatsapp.png';
+import whatsappIcon from '../assets/whatsapp.webp';
 
 export const WhatsAppFloat = () => (
   <div className="fixed right-6 bottom-6 z-50 flex flex-col items-end gap-3">

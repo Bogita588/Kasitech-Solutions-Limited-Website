@@ -287,13 +287,13 @@ laptops and servers Kenya, office IT setup Kenya"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="aspect-[16/9] overflow-hidden rounded-[2rem] shadow-card">
+              {/* <div className="aspect-[16/9] overflow-hidden rounded-[2rem] shadow-card">
                 <img
                   src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80"
                   alt="Modern IT workspace"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

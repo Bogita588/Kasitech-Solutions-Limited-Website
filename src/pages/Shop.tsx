@@ -4,12 +4,12 @@ import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
 import { useToast } from '@/hooks/use-toast';
 import { sanityClient, urlFor, type SanityProduct } from '@/lib/sanity';
-import laptop from '@/assets/product-laptop.jpg';
-import router from '@/assets/product-router.jpg';
-import cctv from '@/assets/product-cctv.jpg';
-import printer from '@/assets/product-printer.jpg';
-import server from '@/assets/product-server.jpg';
-import ups from '@/assets/product-ups.jpg';
+import laptop from '@/assets/product-laptop.webp';
+import router from '@/assets/product-router.webp';
+import cctv from '@/assets/product-cctv.webp';
+import printer from '@/assets/product-printer.webp';
+import server from '@/assets/product-server.webp';
+import ups from '@/assets/product-ups.webp';
 
 const fallbackByCategory: Record<string, string> = {
   Laptops: laptop,
