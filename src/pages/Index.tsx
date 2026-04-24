@@ -18,8 +18,8 @@ const heroSideImages = [image1, image2, image3]
 
 const faqItems = [
   {
-    question: 'How long does it take to build a professional business website?',
-    answer: 'Most standard business websites take 1–3 weeks depending on features, content readiness, and design complexity. Larger platforms like e-commerce or dashboards may take longer.'
+    question: 'What are the best IT support services in Nairobi Kenya?',
+    answer: 'The best IT support services in Nairobi Kenya include network setup, computer repair, cybersecurity, and managed IT services for businesses. A reliable IT company in Kenya should offer fast response, affordable pricing, and support for both small businesses and large organizations.'
   },
   {
     question: 'Do you build SEO-optimized websites that rank on Google?',
