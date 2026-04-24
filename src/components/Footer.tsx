@@ -60,7 +60,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/80 dark:text-white/80">
               <li className="flex items-start gap-2 justify-center sm:justify-start">
                 <MapPin className="w-4 h-4 mt-0.5 text-accent shrink-0" aria-hidden="true" />
-                <span>Westlands, Nairobi, Kenya</span>
+                <span>Lavington, Nairobi, Kenya</span>
               </li>
               <li className="flex items-center gap-2 justify-center sm:justify-start">
                 <Phone className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />

@@ -418,7 +418,7 @@ laptops and servers Kenya, office IT setup Kenya"
       <section className="section" aria-labelledby="testimonials-heading">
         <div className="container-page">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <span className="eyebrow">Client Stories</span>
+            <span className="eyebrow">Client Testimonies</span>
             <h2 id="testimonials-heading" className="heading-lg mt-3">Trusted by Teams Across Industries</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
