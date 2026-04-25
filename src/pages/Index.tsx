@@ -238,7 +238,7 @@ laptops and servers Kenya, office IT setup Kenya"
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-primary">Product-First Thinking</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    We design with real-world use cases, not just features.
+                    IT Solutions in Kenya for Real Business Needs, not just features.
                     Affordable IT Solutions in Kenya for Real Business Needs
                   </p>
                 </div>
