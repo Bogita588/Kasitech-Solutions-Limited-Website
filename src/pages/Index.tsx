@@ -296,7 +296,7 @@ laptops and servers Kenya, office IT setup Kenya"
         <div className="container-page">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <span className="eyebrow">Our Services</span>
-            <h2 id="services-heading" className="heading-lg mt-3">Everything Your Business Needs, Under One Roof</h2>
+            <h2 id="services-heading" className="heading-lg mt-3">A One Stop Shop for All IT Services</h2>
             <p className="lead mt-4">
               Six specialised practice areas — designed to work seamlessly together so you get a complete IT partner, not just a vendor.
             </p>
