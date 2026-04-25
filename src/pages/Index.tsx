@@ -239,33 +239,34 @@ laptops and servers Kenya, office IT setup Kenya"
                   <h3 className="mt-4 text-lg font-semibold text-primary">Product-First Thinking</h3>
                   <p className="mt-2 text-sm text-foreground/80">
                     We design with real-world use cases, not just features.
+                    Affordable IT Solutions in Kenya for Real Business Needs
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Code2 className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">Developer-Friendly Architecture</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Developer-Friendly IT Solutions in Kenya</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    Clean, scalable, and easy to customize or extend.
+                    Clean, scalable, and easy-to-customize IT systems in Kenya, built for businesses, startups, and developers who need flexible and future-ready technology.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Rocket className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">Built to Launch Fast</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Fast Website & Software Development in Kenya</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    Go from idea to live product in record time.
+                    Launch your website or software quickly with our expert web development and IT services in Kenya, designed for speed, efficiency, and rapid business growth.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Rocket className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">Performance-Driven Engineering</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">High-Performance IT Services & Web Solutions in Kenya</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    We optimize every experience for speed, responsiveness, and real-world performance—ensuring users stay engaged and search engines rank you higher.
+                    We deliver fast, secure, and responsive websites and IT systems in Kenya, optimized for user experience, SEO ranking, and business performance.
                   </p>
                 </div>
               </div>
