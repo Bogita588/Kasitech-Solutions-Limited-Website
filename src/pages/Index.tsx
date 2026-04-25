@@ -98,7 +98,7 @@ const Index = () => {
     <>
       <SEO
         title="Kasitech Solutions Limited — One-Stop IT Services in Kenya"
-        description="Reliable IT consulting, cybersecurity, web & app development, networking, training and IT equipment supply across Kenya. Partner with Kasitech today."
+        description="Reliable, Affordable IT consulting,cybersecurity, web & app development, networking, training and IT equipment supply across Kenya. Partner with Kasitech today."
         keywords="
 IT company Kenya, IT services Nairobi, IT solutions Kenya, 
 web development Kenya, website development Nairobi, 
