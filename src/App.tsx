@@ -2,13 +2,17 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import ScrollToTop from "./components/ScrollToTop";
 
+import { trackPageView } from "@/hooks/analytics";
+
+// Lazy pages
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
@@ -23,11 +27,27 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
+// Loader
 const PageFallback = () => (
-  <div className="min-h-[60vh] flex items-center justify-center" role="status" aria-label="Loading">
+  <div
+    className="min-h-[60vh] flex items-center justify-center"
+    role="status"
+    aria-label="Loading"
+  >
     <div className="w-10 h-10 rounded-full border-2 border-accent border-t-transparent animate-spin" />
   </div>
 );
+
+// 🔥 Analytics tracker (CRITICAL)
+const AnalyticsTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -36,8 +56,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <AnalyticsTracker />
+
         <div className="min-h-screen flex flex-col bg-background">
           <Header />
+
           <main className="flex-1 pt-16 lg:pt-20">
             <Suspense fallback={<PageFallback />}>
               <Routes>
@@ -55,6 +78,7 @@ const App = () => (
               </Routes>
             </Suspense>
           </main>
+
           <Footer />
           <WhatsAppFloat />
         </div>
