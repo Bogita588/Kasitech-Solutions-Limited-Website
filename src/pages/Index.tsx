@@ -18,36 +18,28 @@ const heroSideImages = [image1, image2, image3]
 
 const faqItems = [
   {
-    question: 'How long does it take to build a professional business website?',
-    answer: 'Most standard business websites take 1–3 weeks depending on features, content readiness, and design complexity. Larger platforms like e-commerce or dashboards may take longer.'
+    question: 'What are the best IT support services in Nairobi Kenya?',
+    answer: 'The best IT support services in Nairobi Kenya include network setup, computer repair, cybersecurity, and managed IT services for businesses. A reliable IT company in Kenya should offer fast response, affordable pricing, and support for both small businesses and large organizations.'
   },
   {
-    question: 'Do you build SEO-optimized websites that rank on Google?',
-    answer: 'Yes. All our websites are built with SEO best practices including fast loading speed, clean code structure, mobile responsiveness, and proper metadata setup.'
+    question: 'How much does IT support cost in Kenya?',
+    answer: 'IT support services in Kenya typically cost between KSh 2,000 to KSh 20,000 per month depending on the size of the business and services offered. Affordable IT support in Nairobi is available for small businesses needing computer repair,software development, network maintenance, and cybersecurity services.'
   },
   {
-    question: 'Can you redesign my existing website to look more modern and professional?',
-    answer: 'Absolutely. We specialize in website redesigns that improve UI/UX, mobile responsiveness, performance, and conversion rates while maintaining your brand identity.'
+    question: 'Which is the best web design company in Kenya?',
+    answer: 'The best web design company in Kenya offers professional website development, SEO optimization, and mobile-friendly designs for businesses. A top web design company in Nairobi should also provide fast hosting, domain registration, and digital marketing services..'
   },
   {
-    question: 'Do you offer e-commerce website development with payment integration?',
-    answer: 'Yes. We build fully functional online stores with secure payment gateways, product management systems, cart functionality, and order tracking.'
+    question: 'How much does CCTV installation cost in Nairobi Kenya?',
+    answer: 'CCTV installation cost in Nairobi Kenya ranges from KSh 15,000 to KSh 100,000 depending on the number of cameras and system type. Professional CCTV installation services in Kenya include setup, maintenance, and remote monitoring for homes and businesses.'
   },
   {
-    question: 'Will my website work well on mobile phones and tablets?',
-    answer: 'Yes. Every website we build is fully responsive and tested across mobile, tablet, and desktop devices for a smooth user experience.'
+    question: 'Where can I get reliable computer repair services in Nairobi?',
+    answer: 'Reliable computer repair services in Nairobi are offered by IT companies specializing in laptop repair, desktop repair, and hardware troubleshooting. The best computer repair technicians in Kenya provide quick diagnostics, affordable pricing, and genuine spare parts.'
   },
   {
-    question: 'Can you integrate WhatsApp, email, or CRM systems into my website?',
-    answer: 'Yes. We integrate WhatsApp chat, email automation, booking systems, and CRM tools to help you capture and manage leads effectively.'
-  },
-  {
-    question: 'Do you provide website hosting and maintenance after development?',
-    answer: 'Yes. We offer hosting setup, regular updates, security monitoring, backups, and ongoing maintenance to keep your website running smoothly.'
-  },
-  {
-    question: 'Can I manage and update my website content after it is built?',
-    answer: 'Yes. We can build your site with user-friendly CMS solutions like Sanity or WordPress so you can easily update content without coding.'
+    question: 'What is the best software development company in Kenya?',
+    answer: 'The best software development company in Kenya builds scalable, secure, and user-friendly applications. Kasitech Solutions specializes in web applications, mobile apps, and custom software tailored to business needs. We use modern technologies to deliver high-quality solutions.'
   }
 ];
 const services = [
@@ -106,7 +98,7 @@ const Index = () => {
     <>
       <SEO
         title="Kasitech Solutions Limited — One-Stop IT Services in Kenya"
-        description="Reliable IT consulting, cybersecurity, web & app development, networking, training and IT equipment supply across Kenya. Partner with Kasitech today."
+        description="Reliable, Affordable IT consulting,cybersecurity, web & app development, networking, training and IT equipment supply across Kenya. Partner with Kasitech today."
         keywords="
 IT company Kenya, IT services Nairobi, IT solutions Kenya, 
 web development Kenya, website development Nairobi, 
@@ -246,34 +238,35 @@ laptops and servers Kenya, office IT setup Kenya"
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-primary">Product-First Thinking</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    We design with real-world use cases, not just features.
+                    IT Solutions in Kenya for Real Business Needs, not just features.
+                    Affordable IT Solutions in Kenya for Real Business Needs
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Code2 className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">Developer-Friendly Architecture</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Developer-Friendly IT Solutions in Kenya</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    Clean, scalable, and easy to customize or extend.
+                    Clean, scalable, and easy-to-customize IT systems in Kenya, built for businesses, startups, and developers who need flexible and future-ready technology.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Rocket className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">Built to Launch Fast</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">Fast Website & Software Development in Kenya</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    Go from idea to live product in record time.
+                    Launch your website or software quickly with our expert web development and IT services in Kenya, designed for speed, efficiency, and rapid business growth.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Rocket className="w-5 h-5" />
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-primary">Performance-Driven Engineering</h3>
+                  <h3 className="mt-4 text-lg font-semibold text-primary">High-Performance IT Services & Web Solutions in Kenya</h3>
                   <p className="mt-2 text-sm text-foreground/80">
-                    We optimize every experience for speed, responsiveness, and real-world performance—ensuring users stay engaged and search engines rank you higher.
+                    We deliver fast, secure, and responsive websites and IT systems in Kenya, optimized for user experience, SEO ranking, and business performance.
                   </p>
                 </div>
               </div>
@@ -304,7 +297,7 @@ laptops and servers Kenya, office IT setup Kenya"
         <div className="container-page">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <span className="eyebrow">Our Services</span>
-            <h2 id="services-heading" className="heading-lg mt-3">Everything Your Business Needs, Under One Roof</h2>
+            <h2 id="services-heading" className="heading-lg mt-3">A One Stop Shop for All IT Services</h2>
             <p className="lead mt-4">
               Six specialised practice areas — designed to work seamlessly together so you get a complete IT partner, not just a vendor.
             </p>
